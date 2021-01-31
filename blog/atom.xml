@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://scvi-tools.netlify.app/blog</id>
+    <id>https://github.com/YosefLab/blog</id>
     <title>scvi-tools Blog</title>
     <updated>2019-07-05T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://scvi-tools.netlify.app/blog"/>
+    <link rel="alternate" href="https://github.com/YosefLab/blog"/>
     <subtitle>scvi-tools Blog</subtitle>
-    <icon>https://scvi-tools.netlify.app/img/favicon.ico</icon>
+    <icon>https://github.com/YosefLab/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Hyperparameter search for scVI]]></title>
         <id>autotune</id>
-        <link href="https://scvi-tools.netlify.app/blog/autotune"/>
+        <link href="https://github.com/YosefLab/scvi-tools-site/blog/autotune"/>
         <updated>2019-07-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A study of the effects of hyperparameter optimization on scVI models.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Should we zero-inflate scVI?]]></title>
         <id>zero-inflation</id>
-        <link href="https://scvi-tools.netlify.app/blog/zero-inflation"/>
+        <link href="https://github.com/YosefLab/scvi-tools-site/blog/zero-inflation"/>
         <updated>2019-06-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Droplet- based single-cell RNA sequencing (scRNA-seq) datasets typically contain at least 90% zero entries. How can we best model these zeros? Recent work focused on modeling zeros with a mixture of count distributions. The first component is meant to reflect whether such an entry can be explained solely by the limited amount of sampling (on average ~5% or less of the molecules in the cell). The second component is generally used to reflect "surprising" zeros caused by measurement bias, transient transcriptional noise (e.g., "bursty" gene with a short mRNA half life), or true longer-term heterogeneity that can not be captured by a similified (low dimensional) representation of the data. Among others, zero-inflated distributions (i.e., zero-inflated negative binomial) have been widely adopted to model gene expression levels (1, 2).]]></summary>
     </entry>
