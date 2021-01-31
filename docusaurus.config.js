@@ -4,8 +4,8 @@ const katex = require("rehype-katex");
 module.exports = {
   title: "scvi-tools",
   tagline: "Probabilistic models for single-cell omics data",
-  url: "https://yoseflab.github.io",
-  baseUrl: "/scvi-tools-site",
+  url: "https://trusting-kare-4138db.netlify.app/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
