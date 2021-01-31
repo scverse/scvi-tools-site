@@ -18,7 +18,7 @@ module.exports = {
     },
     colorMode: {
       disableSwitch: true,
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
     navbar: {
       title: "scvi-tools",
