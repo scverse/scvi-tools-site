@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>scvi-tools Blog</title>
+        <link>https://scvi-tools.netlify.app/blog</link>
+        <description>scvi-tools Blog</description>
+        <lastBuildDate>Fri, 05 Jul 2019 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Hyperparameter search for scVI]]></title>
+            <link>https://scvi-tools.netlify.app/blog/autotune</link>
+            <guid>autotune</guid>
+            <pubDate>Fri, 05 Jul 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[A study of the effects of hyperparameter optimization on scVI models.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Should we zero-inflate scVI?]]></title>
+            <link>https://scvi-tools.netlify.app/blog/zero-inflation</link>
+            <guid>zero-inflation</guid>
+            <pubDate>Tue, 25 Jun 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Droplet- based single-cell RNA sequencing (scRNA-seq) datasets typically contain at least 90% zero entries. How can we best model these zeros? Recent work focused on modeling zeros with a mixture of count distributions. The first component is meant to reflect whether such an entry can be explained solely by the limited amount of sampling (on average ~5% or less of the molecules in the cell). The second component is generally used to reflect "surprising" zeros caused by measurement bias, transient transcriptional noise (e.g., "bursty" gene with a short mRNA half life), or true longer-term heterogeneity that can not be captured by a similified (low dimensional) representation of the data. Among others, zero-inflated distributions (i.e., zero-inflated negative binomial) have been widely adopted to model gene expression levels (1, 2).]]></description>
+        </item>
+    </channel>
+</rss>
