@@ -13,6 +13,7 @@ module.exports = {
   projectName: "scvi-tools-site", // Usually your repo name.
   themeConfig: {
     prism: {
+      defaultLanguage: 'python',
       theme: require("prism-react-renderer/themes/github"),
       darkTheme: require("prism-react-renderer/themes/dracula"),
     },
@@ -27,6 +28,25 @@ module.exports = {
         src: "img/logo.svg",
       },
       items: [
+        {
+          label: 'About',
+          position: 'right', // or 'right'
+          items: [
+            {
+              label: 'Team',
+              to: "team",
+            },
+            {
+              label: 'News',
+              to: "news",
+            },
+            {
+              label: 'Press',
+              to: "press",
+            },
+            // ... more items
+          ],
+        },
         {
           to: "docs/",
           href: "https://scvi-tools.org",
