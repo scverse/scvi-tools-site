@@ -49,8 +49,12 @@ module.exports = {
         },
         {
           to: "docs/",
+          activeBasePath: "docs/",
+          label: "Overview",
+          position: "right",
+        },
+        {
           href: "https://scvi-tools.org",
-          activeBasePath: "docs",
           label: "Docs",
           position: "right",
         },
