@@ -12,6 +12,7 @@ module.exports = {
   organizationName: "YosefLab", // Usually your GitHub org/user name.
   projectName: "scvi-tools-site", // Usually your repo name.
   stylesheets: [
+    "https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css",
     {
       href: "https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css",
       type: "text/css",
