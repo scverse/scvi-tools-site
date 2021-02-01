@@ -2,12 +2,16 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
-  .heroImg2 {
-    float: right;
-    margin-top: 20px;
+  .heroImg {
+    // float: right;
+    margin-top: 0px;
+    // margin-right: 40px;
     padding: 0px;
     height: 270px;
-    margin: 10px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    // margin: 0px 0;
   }
 
   .heroBanner {
@@ -22,7 +26,7 @@
     .heroBanner {
       padding: 2rem;
     }
-    .heroImg2 {
+    .heroImg {
         padding: 0px;
         height: 0px;
       }

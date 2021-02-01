@@ -27,9 +27,9 @@ function Hero() {
                     </div>
                     <div className={classnames("col col--4")}>
                         <img
-                            src={useBaseUrl(`img/graphical_model.png`)}
+                            src={useBaseUrl(`img/graphical_model.svg`)}
                             alt="Logo"
-                            className={styles.heroImg2}
+                            className={styles.heroImg}
                         />
                     </div>
                 </div>

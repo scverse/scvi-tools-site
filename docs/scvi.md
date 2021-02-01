@@ -1,7 +1,7 @@
 ---
-id: doc1
-title: Style Guide
-sidebar_label: Style Guide
+id: scvi
+title: Single-cell Variational Inference
+sidebar_label: scVI (scRNA-seq)
 ---
 
 You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).

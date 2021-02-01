@@ -1,19 +1,31 @@
 import React from "react";
 import clsx from "clsx";
 import { FiCoffee, FiDatabase, FiPackage, FiZap } from "react-icons/fi";
+import { BiAnalyse, BiTimeFive } from "react-icons/bi";
 
 import styles from "./styles.module.scss";
 
 const size = 24;
 const data = [
     {
+        icon: <BiAnalyse size={size} />,
+        title: <>End-to-end analysis</>,
+        description: (
+            <>
+                Dimensionality reduction, dataset integration, differential expression,
+                automated annotation. scvi-tools contains models that perform a wide variety
+                of tasks across many omics. Learn more about each model in the overview.
+            </>
+        ),
+    },
+    {
         icon: <FiPackage size={size} />,
         title: <>Easy-to-use implementations</>,
         description: (
             <>
-                scvi-tools features implementations of popular single-cell models
-                like scVI, scANVI, totalVI, Stereoscope, and CellAssign with intuitive
-                interfaces. No more searching through source code.
+                Each model (e.g., scVI, scANVI, CellAssign, totalVI) follows the
+                same user interface that couples nicely with Scanpy, Seurat, or Bioconductor.
+                No more searching through source code.
             </>
         ),
     },
@@ -26,6 +38,17 @@ const data = [
                 easy with its object-oriented design and base components powered
                 by PyTorch, PyTorch lightning, Pyro, and AnnData. No need to write
                 a dataloader or trainer ever again.
+            </>
+        ),
+    },
+    {
+        icon: <BiTimeFive size={size} />,
+        title: <>Stochastic, GPU-accelerated inference</>,
+        description: (
+            <>
+                scvi-tools models are trained efficiently through minibatching and
+                can naturally be used with a GPU. These models are prepared to scale with growing
+                dataset sizes.
             </>
         ),
     },
