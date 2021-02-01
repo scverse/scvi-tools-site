@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{83:function(o){o.exports=JSON.parse('{"allTagsPath":"/scvi-tools-site/blog/tags","slug":"zero-inflation","name":"zero-inflation","count":1,"permalink":"/scvi-tools-site/blog/tags/zero-inflation"}')}}]);
