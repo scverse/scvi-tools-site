@@ -35,8 +35,9 @@ function Examples() {
               <div className="col col--10 col--offset-1">
                 <Headline
                   category="Examples"
-                  title="Quick snippets to get started with scvi-tools"
+                  title="Overview of scvi-tools models"
                 />
+                <p>Explore the broad functionality of each model.</p>
                 {renderTabs()}
               </div>
             </div>

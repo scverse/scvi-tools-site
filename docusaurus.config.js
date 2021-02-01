@@ -51,9 +51,9 @@ module.exports = {
           ],
         },
         {
-          to: "docs/",
-          activeBasePath: "docs/",
+          type: "doc",
           label: "Overview",
+          docId: "overview",
           position: "right",
         },
         {

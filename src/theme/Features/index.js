@@ -23,7 +23,7 @@ const data = [
         title: <>Easy-to-use implementations</>,
         description: (
             <>
-                Each model (e.g., scVI, scANVI, CellAssign, totalVI) follows the
+                Each model (e.g., scVI, scANVI, Stereoscope, totalVI) follows the
                 same user interface that couples nicely with Scanpy, Seurat, or Bioconductor workflows.
                 No more searching through source code.
             </>
