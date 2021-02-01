@@ -24,7 +24,7 @@ const data = [
         description: (
             <>
                 Each model (e.g., scVI, scANVI, CellAssign, totalVI) follows the
-                same user interface that couples nicely with Scanpy, Seurat, or Bioconductor.
+                same user interface that couples nicely with Scanpy, Seurat, or Bioconductor workflows.
                 No more searching through source code.
             </>
         ),
