@@ -87,7 +87,7 @@ module.exports = {
           editUrl:
             "https://github.com/YosefLab/scvi-tools-site",
           remarkPlugins: [math],
-          rehypePlugins: [katex],
+          rehypePlugins: [[katex, { strict: false }]],
         },
         blog: {
           showReadingTime: true,
@@ -95,7 +95,7 @@ module.exports = {
           editUrl:
             "https://github.com/YosefLab/scvi-tools-site/blog/",
           remarkPlugins: [math],
-          rehypePlugins: [katex],
+          rehypePlugins: [[katex, { strict: false }]],
         },
         theme: {
           customCss: require.resolve("./src/css/custom.scss"),
