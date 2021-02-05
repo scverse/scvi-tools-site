@@ -82,7 +82,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Yosef Lab, UC Berkeley. Built with Docusaurus.`,
     },
   },
-  plugins: ["docusaurus-plugin-sass", '@docusaurus/plugin-google-analytics'],
+  plugins: ["docusaurus-plugin-sass"],
   presets: [
     [
       "@docusaurus/preset-classic",
