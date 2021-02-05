@@ -15,6 +15,9 @@ module.exports = {
     "https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css",
   ],
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'UA-141905405-3',
+    },
     prism: {
       defaultLanguage: 'python',
       theme: require("prism-react-renderer/themes/github"),
@@ -79,7 +82,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Yosef Lab, UC Berkeley. Built with Docusaurus.`,
     },
   },
-  plugins: ["docusaurus-plugin-sass"],
+  plugins: ["docusaurus-plugin-sass", '@docusaurus/plugin-google-analytics'],
   presets: [
     [
       "@docusaurus/preset-classic",
