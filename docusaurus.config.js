@@ -5,7 +5,7 @@ module.exports = {
   title: "scvi-tools",
   tagline: "Probabilistic models for single-cell omics data",
   url: "https://github.com/YosefLab/",
-  baseUrl: "/scvi-tools-site/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -57,7 +57,7 @@ module.exports = {
           position: "right",
         },
         {
-          href: "https://scvi-tools.org",
+          href: "https://docs.scvi-tools.org",
           label: "Docs",
           position: "right",
         },
