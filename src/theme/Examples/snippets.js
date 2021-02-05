@@ -48,7 +48,7 @@ results = model.differential_expression(groupby="cell types", group1="CD4", grou
     },
     {
         label: "totalVI",
-        code: `# totalVI is for end-to-end analysis of scRNA-seq data
+        code: `# totalVI is for end-to-end analysis of CITE-seq data
 import anndata
 import scvi
 
