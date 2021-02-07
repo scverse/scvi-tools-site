@@ -59,10 +59,10 @@ model = scvi.model.TOTALVI(adata)
 model.train()
 
 # get integrated low-dimensional representation
-adata.obsm["X_scvi"] = model.get_latent_representation()
+adata.obsm["X_totalvi"] = model.get_latent_representation()
 
 # normalized expression
-adata.layers["totalvi_norm"] = model.get_normalized_expression()
+adata.layers["totalvi_norm"], adata.obsm["totalvi_pro_norm"] = model.get_normalized_expression()
 
 # differential expression
 results = model.differential_expression(groupby="cell types", group1="CD4", group2="CD8")`,

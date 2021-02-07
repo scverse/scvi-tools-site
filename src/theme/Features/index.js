@@ -31,7 +31,7 @@ const data = [
     },
     {
         icon: <FiZap size={size} />,
-        title: <>Rapidly develop new models </>,
+        title: <>Rapid development of new models </>,
         description: (
             <>
                 Building novel probabilistic models from scvi-tools is made
