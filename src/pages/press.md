@@ -1,10 +1,30 @@
 # Press
 
-## General
+
+## Articles
 
 - [*Nature Methods*: Bayesian deep learning for single-cell analysis](https://www.nature.com/articles/s41592-018-0230-9&)
 
 
+## Publications
+
+ - Joint probabilistic modeling of single-cell multi-omic data with totalVI.
+A. Gayoso\*, Z. Steier\*, R. Lopez, J. Regier, KL. Nazor, A. Streets†, N Yosef†.
+*Nature Methods (In press)*, 2021
+- Probabilistic Harmonization and Annotation of Single-cell Transcriptomics data with Deep Generative Models. C. Xu\*, R. Lopez\*, E. Mehlman\*, J. Regier, M.I. Jordan, N. Yosef.
+*Molecular Systems Biology*, 2021
+- A joint model of unpaired data from scRNA-seq and spatial transcriptomics for imputing missing gene expression measurements.
+R. Lopez\*, A. Nazaret\*, M. Langevin\*, J. Samaran, J. Regier, M.I. Jordan, N. Yosef.
+*ICML Workshop on Computational Biology*, 2019
+- Deep Generative Models for Detecting Differential Expression in Single Cells.
+P. Boyeau, R. Lopez, J. Regier, A. Gayoso, MI. Jordan, N. Yosef.
+*Machine Learning in Computational Biology meeting*, 2019
+- Detecting Zero-Inflated Genes in Single-Cell Transcriptomics Data.
+O. Clivio, R. Lopez, J. Regier, A. Gayoso, MI. Jordan, N Yosef.
+*Machine Learning in Computational Biology meeting*, 2019
+- Deep Generative Modeling for Single-cell Transcriptomics.
+R. Lopez, J. Regier, MB. Cole, M. Jordan, N. Yosef.
+*Nature Methods*, 2018
 ## Awards
 
 - [*F1000 exceptional recommendation*: Deep generative modeling for single-cell transcriptomics](https://facultyopinions.com/prime/734522090)

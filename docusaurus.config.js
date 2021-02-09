@@ -35,6 +35,11 @@ module.exports = {
       },
       items: [
         {
+          href: "https://docs.scvi-tools.org",
+          label: "Docs",
+          position: "right",
+        },
+        {
           label: 'About',
           position: 'right', // or 'right'
           items: [
@@ -57,11 +62,6 @@ module.exports = {
           type: "doc",
           label: "Overview",
           docId: "overview",
-          position: "right",
-        },
-        {
-          href: "https://docs.scvi-tools.org",
-          label: "Docs",
           position: "right",
         },
         { to: "blog", label: "Blog", position: "right" },

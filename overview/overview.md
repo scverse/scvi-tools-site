@@ -9,4 +9,9 @@ scvi-tools is designed for two sets of users:
 1. Practitioners who would like to easily use probablistic models for single-cell omics.
 2. Methods developers who want to rapidly deisgn new probabilistic models.
 
-Use the sidebar to learn more about some of the different models implemented in scvi-tools, as well as an overview of the model construction process.
+## Get started
+
+
+- Tutorials, API reference, and installation guides are available in the [docs](https://docs.scvi-tools.org/en/stable/).
+-  For discussion of usage, checkout out our [forum](https://discourse.scvi-tools.org/).
+-  To report bugs, make an issue on [GitHub](https://github.com/YosefLab/scvi-tools/issues).

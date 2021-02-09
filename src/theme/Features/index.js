@@ -14,7 +14,7 @@ const data = [
             <>
                 Dimensionality reduction, dataset integration, differential expression,
                 automated annotation. scvi-tools contains models that perform a wide variety
-                of tasks across many omics. Learn more about each model in the overview.
+                of tasks across many omics. Checkout the <a href="https://docs.scvi-tools.org/en/stable/user_guide/index.html">user guide</a> for all the details.
             </>
         ),
     },
@@ -24,7 +24,7 @@ const data = [
         description: (
             <>
                 Each model (e.g., scVI, scANVI, Stereoscope, totalVI) follows the
-                same user interface that couples nicely with Scanpy, Seurat, or Bioconductor workflows.
+                same user interface that couples nicely with <a href="https://scanpy.readthedocs.io/en/stable/">Scanpy</a>, <a href="https://satijalab.org/seurat/">Seurat</a>, or <a href="https://www.bioconductor.org/">Bioconductor</a> workflows.
                 No more searching through source code.
             </>
         ),
@@ -36,7 +36,7 @@ const data = [
             <>
                 Building novel probabilistic models from scvi-tools is made
                 easy with its object-oriented design and base components powered
-                by PyTorch, PyTorch lightning, Pyro, and AnnData. No need to write
+                by <a href="https://pytorch.org">PyTorch</a>, <a href="https://www.pytorchlightning.ai/">PyTorch Lightning</a>, <a href="https://pyro.ai">Pyro</a>, and <a href="https://anndata.readthedocs.io/en/latest/">AnnData</a>. No need to write
                 a dataloader or trainer ever again.
             </>
         ),
