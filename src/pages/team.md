@@ -16,3 +16,5 @@ The package is supported by the [Yosef Lab](https://yoseflab.github.io) at UC Be
 - [Achille Nazaret](https://nazaret.me/)
 - Pierre Boyeau
 - Oscar Clivio
+- Jules Samaran
+- Valentine Svensson
