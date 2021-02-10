@@ -35,6 +35,12 @@ module.exports = {
       },
       items: [
         {
+          type: "doc",
+          label: "Get Started",
+          docId: "get_started",
+          position: "right",
+        },
+        {
           href: "https://docs.scvi-tools.org",
           label: "Docs",
           position: "right",
@@ -55,14 +61,12 @@ module.exports = {
               label: 'Press',
               to: "press",
             },
+            {
+              label: 'Ecosystem',
+              to: "ecosystem",
+            },
             // ... more items
           ],
-        },
-        {
-          type: "doc",
-          label: "Overview",
-          docId: "overview",
-          position: "right",
         },
         { to: "blog", label: "Blog", position: "right" },
         {
@@ -88,8 +92,8 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
-          path: 'overview',
-          routeBasePath: 'overview',
+          path: 'get_started',
+          routeBasePath: 'get_started',
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:

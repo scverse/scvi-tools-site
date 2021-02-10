@@ -8,11 +8,11 @@
 
 
 module.exports = {
-  overview: [
-    'overview',
+  get_started: [
+    'get_started',
     {
       type: 'category',
-      label: 'Models',
+      label: 'Models for data analysis',
       items: [
         'scvi',
         'scanvi',
@@ -20,6 +20,5 @@ module.exports = {
       ],
     },
     'construction',
-    'ecosystem'
   ],
 };

@@ -26,7 +26,12 @@ function Home() {
         <main className={styles.main}>
           <Features />
           {/* <Comparison /> */}
-          <Examples />
+          {/* <Examples /> */}
+          <div className={styles.buttons}>
+            <p><iframe src="https://ghbtns.com/github-btn.html?user=yoseflab&repo=scvi-tools&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+              <iframe src="https://ghbtns.com/github-btn.html?user=yoseflab&repo=scvi-tools&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+            </p>
+          </div>
         </main>
       </Layout>
     </IconContext.Provider>

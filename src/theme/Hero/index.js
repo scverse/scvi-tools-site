@@ -18,14 +18,23 @@ function Hero() {
                 <div className="row">
                     <div className={classnames("col col--6 col--offset-1")}>
                         <h1 className="hero__title">{siteConfig.tagline}</h1>
-                        {/* <h1 className={clsx("hero__subtitle", styles.subtitle)}> */}
-                        {/* {siteConfig.tagline} */}
-                        {/* </h1> */}
+                        <p className={clsx("hero__subtitle", styles.subtitle)}>
+                            scvi-tools accelerates data analysis and model development, powered by PyTorch and AnnData.
+                        </p>
                         <CodeBlock className="language-sh">
                             pip install scvi-tools
                     </CodeBlock>
-                        <p><iframe src="https://ghbtns.com/github-btn.html?user=yoseflab&repo=scvi-tools&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
-                        </p>
+                        <div className={styles.buttons}>
+                            <Link
+                                className={clsx(
+                                    "button button--primary button--outline button--lg",
+                                    styles.getStarted
+                                )}
+                                to={useBaseUrl("get_started/")}
+                            >
+                                Get Started
+                            </Link>
+                        </div>
                     </div>
                     <div className={classnames("col col--4")}>
                         <img

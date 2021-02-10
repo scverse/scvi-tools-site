@@ -13,8 +13,7 @@ const data = [
         description: (
             <>
                 Dimensionality reduction, dataset integration, differential expression,
-                automated annotation. scvi-tools contains models that perform a wide variety
-                of tasks across many omics. Checkout the <a href="https://docs.scvi-tools.org/en/stable/user_guide/index.html">user guide</a> for all the details.
+                automated annotation. scvi-tools contains models that perform a wide variety of tasks across many omics, all while accounting for the statistical properties of the data.
             </>
         ),
     },
@@ -34,8 +33,8 @@ const data = [
         title: <>Rapid development of new models </>,
         description: (
             <>
-                Building novel probabilistic models from scvi-tools is made
-                easy with its object-oriented design and base components powered
+                Building novel probabilistic models with scvi-tools is simplified
+                by its object-oriented design and base components powered
                 by <a href="https://pytorch.org">PyTorch</a>, <a href="https://www.pytorchlightning.ai/">PyTorch Lightning</a>, <a href="https://pyro.ai">Pyro</a>, and <a href="https://anndata.readthedocs.io/en/latest/">AnnData</a>. No need to write
                 a dataloader or trainer ever again.
             </>

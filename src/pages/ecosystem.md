@@ -1,7 +1,4 @@
----
-id: ecosystem
-title: Ecosystem
----
+# Ecosystem
 
 Here we highlight projects that depend on scvi-tools.
 
