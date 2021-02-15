@@ -4,6 +4,9 @@ title: scANVI
 sidebar_label: scANVI (scRNA-seq)
 ---
 
+This page is under construction. For now, please learn more about scANVI in our [user guide](https://docs.scvi-tools.org/en/stable/user_guide/index.html).
+
+
 ```python
 # scANVI augments scVI to transfer cell type labels
 import anndata

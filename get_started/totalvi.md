@@ -4,6 +4,8 @@ title: Total Variational Inference
 sidebar_label: totalVI (CITE-seq)
 ---
 
+This page is under construction. For now, please learn more about totalVI in our [user guide](https://docs.scvi-tools.org/en/stable/user_guide/index.html).
+
 ```python
 # totalVI is for end-to-end analysis of CITE-seq data
 import anndata
