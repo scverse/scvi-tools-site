@@ -10,7 +10,7 @@
 
  - Joint probabilistic modeling of single-cell multi-omic data with totalVI.
 A. Gayoso\*, Z. Steier\*, R. Lopez, J. Regier, KL. Nazor, A. Streets†, N Yosef†.
-*Nature Methods (In press)*, 2021
+*Nature Methods*, 2021
 - Probabilistic Harmonization and Annotation of Single-cell Transcriptomics data with Deep Generative Models. C. Xu\*, R. Lopez\*, E. Mehlman\*, J. Regier, M.I. Jordan, N. Yosef.
 *Molecular Systems Biology*, 2021
 - A joint model of unpaired data from scRNA-seq and spatial transcriptomics for imputing missing gene expression measurements.
