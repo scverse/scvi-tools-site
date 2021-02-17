@@ -34,16 +34,31 @@ module.exports = {
         src: "img/logo.svg",
       },
       items: [
-        {
-          type: "doc",
-          label: "Get Started",
-          docId: "get_started",
-          position: "right",
-        },
+        // {
+        //   type: "doc",
+        //   label: "Get Started",
+        //   docId: "get_started",
+        //   position: "right",
+        // },
+        { to: "get_started", label: "Get Started", position: "right" },
         {
           href: "https://docs.scvi-tools.org",
           label: "Docs",
           position: "right",
+          items: [
+            {
+              label: 'Full documentation',
+              href: "https://docs.scvi-tools.org",
+            },
+            {
+              label: 'User guide',
+              href: "https://docs.scvi-tools.org/en/stable/user_guide/index.html",
+            },
+            {
+              label: 'API reference',
+              href: "https://docs.scvi-tools.org/en/stable/api/index.html",
+            },
+          ],
         },
         {
           label: 'About',
