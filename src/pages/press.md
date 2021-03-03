@@ -14,6 +14,12 @@ A. Gayoso\*, Z. Steier\*, R. Lopez, J. Regier, KL. Nazor, A. Streets†, N Yosef
 - Probabilistic Harmonization and Annotation of Single-cell Transcriptomics data with Deep Generative Models. 
 C. Xu\*, R. Lopez\*, E. Mehlman\*, J. Regier, M.I. Jordan, N. Yosef.
 *Molecular Systems Biology*, 2021
+- Decision-Making with Auto-Encoding Variational Bayes.
+R. Lopez, P. Boyeau, N. Yosef, M. Jordan, J. Regier.
+Advances in Neural Information Processing Systems, 2020
+- Interpretable factor models of single-cell RNA-seq via variational autoencoders.
+V. Svensson, A. Gayoso, N. Yosef, L. Pachter.
+Bioinformatics, 2020
 - A joint model of unpaired data from scRNA-seq and spatial transcriptomics for imputing missing gene expression measurements.
 R. Lopez\*, A. Nazaret\*, M. Langevin\*, J. Samaran\*, J. Regier\*, M.I. Jordan, N. Yosef.
 *ICML Workshop on Computational Biology*, 2019
@@ -23,6 +29,12 @@ P. Boyeau, R. Lopez, J. Regier, A. Gayoso, MI. Jordan, N. Yosef.
 - Detecting Zero-Inflated Genes in Single-Cell Transcriptomics Data.
 O. Clivio, R. Lopez, J. Regier, A. Gayoso, MI. Jordan, N Yosef.
 *Machine Learning in Computational Biology meeting*, 2019
+- Information Constraints on Auto-Encoding Variational Bayes.
+R. Lopez, J. Regier, M. Jordan, N. Yosef.
+Advanced in Neural Information Processing Systems , 2018
+- A Deep Generative Model for Semi-Supervised Classification with Noisy Labels.
+M. Langevin, E. Mehlman, J. Regier, R. Lopez, M.I. Jordan, N. Yosef.
+*Bay Area Machine Learning Symposium*, 2018
 - Deep Generative Modeling for Single-cell Transcriptomics.
 R. Lopez, J. Regier, MB. Cole, M. Jordan, N. Yosef.
 *Nature Methods*, 2018
@@ -40,6 +52,7 @@ R. Lopez, J. Regier, MB. Cole, M. Jordan, N. Yosef.
 
 - [*Regev Lab, Cell Circuits and Epigenomics, and MIA special seminar*: Deep generative modeling for single-cell transcriptomics](https://www.broadinstitute.org/talks/regev-lab-cell-circuits-and-epigenomics-and-mia-special-seminar-deep-generative-modeling)
 - [*Berkeley CCB skills seminar*: Single-cell data analysis with Scanpy and scvi-tools](https://ccbskillssem.github.io/pages/scanpy_scvi_tools/)
+- [*Bay Area Machine Learning Symposium*: A Deep Generative Model for Semi-Supervised Classification with Noisy Labels](https://www.youtube.com/watch?v=A2Sv0AUA27I)
 - [*Bay Area Machine Learning Symposium*: A deep generative model for gene expression profiles from single-cell RNA sequencing](https://www.youtube.com/watch?v=NlpqwjQ91Sc)
 
 ## Blog posts
