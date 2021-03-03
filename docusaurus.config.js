@@ -52,7 +52,11 @@ module.exports = {
             },
             {
               label: 'User guide',
-              href: "https://docs.scvi-tools.org/en/stable/user_guide/index.html",
+              href: "https://docs.scvi-tools.org/en/stable/user_guide/user.html",
+            },
+            {
+              label: 'Developer guide',
+              href: "https://docs.scvi-tools.org/en/stable/user_guide/developer.html",
             },
             {
               label: 'API reference',
