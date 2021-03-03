@@ -16,10 +16,10 @@ C. Xu\*, R. Lopez\*, E. Mehlman\*, J. Regier, M.I. Jordan, N. Yosef.
 *Molecular Systems Biology*, 2021
 - Decision-making with auto-encoding variational Bayes.
 R. Lopez, P. Boyeau, N. Yosef, M. Jordan, J. Regier.
-Advances in Neural Information Processing Systems, 2020
+*Advances in Neural Information Processing Systems*, 2020
 - Interpretable factor models of single-cell RNA-seq via variational autoencoders.
 V. Svensson, A. Gayoso, N. Yosef, L. Pachter.
-Bioinformatics, 2020
+*Bioinformatics*, 2020
 - A joint model of unpaired data from scRNA-seq and spatial transcriptomics for imputing missing gene expression measurements.
 R. Lopez\*, A. Nazaret\*, M. Langevin\*, J. Samaran\*, J. Regier\*, M.I. Jordan, N. Yosef.
 *ICML Workshop on Computational Biology*, 2019
@@ -31,7 +31,7 @@ O. Clivio, R. Lopez, J. Regier, A. Gayoso, MI. Jordan, N Yosef.
 *Machine Learning in Computational Biology meeting*, 2019
 - Information constraints on auto-encoding variational Bayes.
 R. Lopez, J. Regier, M. Jordan, N. Yosef.
-Advanced in Neural Information Processing Systems , 2018
+*Advances in Neural Information Processing Systems*, 2018
 - A deep generative model for semi-supervised classification with noisy labels.
 M. Langevin, E. Mehlman, J. Regier, R. Lopez, M.I. Jordan, N. Yosef.
 *Bay Area Machine Learning Symposium*, 2018
