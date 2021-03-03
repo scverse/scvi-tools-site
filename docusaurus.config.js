@@ -73,16 +73,16 @@ module.exports = {
               to: "team",
             },
             {
-              label: 'News',
-              to: "news",
-            },
-            {
               label: 'Press',
               to: "press",
             },
             {
               label: 'Ecosystem',
               to: "ecosystem",
+            },
+            {
+              label: 'News',
+              to: "news",
             },
             // ... more items
           ],
