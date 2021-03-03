@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[29],{99:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"scvi-tools 0.9.0 release","permalink":"/blog/v090"},{"title":"Hyperparameter search for scVI","permalink":"/blog/autotune"},{"title":"Should we zero-inflate scVI?","permalink":"/blog/zero-inflation"}]}')}}]);

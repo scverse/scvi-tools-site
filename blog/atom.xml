@@ -2,11 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://scvi-tools.org/blog</id>
     <title>scvi-tools Blog</title>
-    <updated>2019-07-05T00:00:00.000Z</updated>
+    <updated>2021-03-03T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://scvi-tools.org/blog"/>
     <subtitle>scvi-tools Blog</subtitle>
     <icon>https://scvi-tools.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[scvi-tools 0.9.0 release]]></title>
+        <id>v090</id>
+        <link href="https://scvi-tools.org/blog/v090"/>
+        <updated>2021-03-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Today we officially released scvi-tools version 0.9.0 (changelog). This release marks the culmination of five months of work on the backend of the codebase, which came after three months of work on the frontend.]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hyperparameter search for scVI]]></title>
         <id>autotune</id>

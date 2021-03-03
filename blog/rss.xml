@@ -4,9 +4,16 @@
         <title>scvi-tools Blog</title>
         <link>https://scvi-tools.org/blog</link>
         <description>scvi-tools Blog</description>
-        <lastBuildDate>Fri, 05 Jul 2019 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 03 Mar 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[scvi-tools 0.9.0 release]]></title>
+            <link>https://scvi-tools.org/blog/v090</link>
+            <guid>v090</guid>
+            <pubDate>Wed, 03 Mar 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Today we officially released scvi-tools version 0.9.0 (changelog). This release marks the culmination of five months of work on the backend of the codebase, which came after three months of work on the frontend.]]></description>
+        </item>
         <item>
             <title><![CDATA[Hyperparameter search for scVI]]></title>
             <link>https://scvi-tools.org/blog/autotune</link>
