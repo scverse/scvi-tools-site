@@ -4,6 +4,7 @@
 ## Articles
 - [*Molecular Systems Biology*: Enhancing scientific discoveries in molecular biology with deep generative models](https://www.embopress.org/doi/full/10.15252/msb.20199198)
 - [*Nature Methods*: Bayesian deep learning for single-cell analysis](https://www.nature.com/articles/s41592-018-0230-9&)
+- [*Berkeley Engineering News*: TotalVI: A transformative algorithm](https://engineering.berkeley.edu/news/2021/03/totalvi-a-transformative-algorithm/)
 
 
 ## Publications
@@ -11,7 +12,7 @@
  - Joint probabilistic modeling of single-cell multi-omic data with totalVI.
 A. Gayoso\*, Z. Steier\*, R. Lopez, J. Regier, KL. Nazor, A. Streets†, N Yosef†.
 *Nature Methods*, 2021
-- Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models. 
+- Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models.
 C. Xu\*, R. Lopez\*, E. Mehlman\*, J. Regier, M.I. Jordan, N. Yosef.
 *Molecular Systems Biology*, 2021
 - Decision-making with auto-encoding variational Bayes.
