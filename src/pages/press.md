@@ -50,7 +50,7 @@ R. Lopez, J. Regier, MB. Cole, M. Jordan, N. Yosef.
 - [*The Bioinformatics Chat Podcast*: scVI with Romain Lopez and Gabriel Misrachi](https://bioinformatics.chat/scvi)
 
 ## Talks
-
+- [*MIT 6.874, Deep Learning in the Life*: Deep generative modeling for single-cell transcriptomics](https://youtu.be/NNOkdgE4jNM?t=2783)
 - [*Regev Lab, Cell Circuits and Epigenomics, and MIA special seminar*: Deep generative modeling for single-cell transcriptomics](https://www.broadinstitute.org/talks/regev-lab-cell-circuits-and-epigenomics-and-mia-special-seminar-deep-generative-modeling)
 - [*Berkeley CCB skills seminar*: Single-cell data analysis with Scanpy and scvi-tools](https://ccbskillssem.github.io/pages/scanpy_scvi_tools/)
 - [*Bay Area Machine Learning Symposium*: A deep generative model for semi-supervised classification with noisy labels](https://www.youtube.com/watch?v=A2Sv0AUA27I)
