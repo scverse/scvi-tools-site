@@ -48,3 +48,20 @@ To leverage a GPU for inference, a version of [PyTorch](https://pytorch.org/get-
 -  For immediate public chat with the developers, come talk to us on [Gitter](https://gitter.im/scvi-tools/).
 -  For a skeleton of implementation of a new model in scvi-tools, refer to our [template repository](https://github.com/YosefLab/scvi-tools-skeleton/)
 -  To report bugs, make an issue on [GitHub](https://github.com/YosefLab/scvi-tools/issues).
+
+## Reference
+
+If you use scvi-tools in your research, please consider citing
+
+```
+@article{Gayoso2021scvitools,
+	author = {Gayoso, Adam and Lopez, Romain and Xing, Galen and Boyeau, Pierre and Wu, Katherine and Jayasuriya, Michael and Mehlman, Edouard and Langevin, Maxime and Liu, Yining and Samaran, Jules and Misrachi, Gabriel and Nazaret, Achille and Clivio, Oscar and Xu, Chenling and Ashuach, Tal and Lotfollahi, Mohammad and Svensson, Valentine and da Veiga Beltrame, Eduardo and Talavera-Lopez, Carlos and Pachter, Lior and Theis, Fabian J and Streets, Aaron and Jordan, Michael I and Regier, Jeffrey and Yosef, Nir},
+	title = {scvi-tools: a library for deep probabilistic analysis of single-cell omics data},
+	year = {2021},
+	doi = {10.1101/2021.04.28.441833},
+	publisher = {Cold Spring Harbor Laboratory},
+	URL = {https://www.biorxiv.org/content/early/2021/04/29/2021.04.28.441833},
+	eprint = {https://www.biorxiv.org/content/early/2021/04/29/2021.04.28.441833.full.pdf},
+	journal = {bioRxiv}
+}
+```
