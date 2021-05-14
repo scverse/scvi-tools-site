@@ -28,14 +28,15 @@ To leverage a GPU for inference, a version of [PyTorch](https://pytorch.org/get-
 - [SOLO](https://www.sciencedirect.com/science/article/pii/S2405471220301952) for detection of doublets.
 - [scArches](https://www.biorxiv.org/content/10.1101/2020.07.16.205997v1) for transfer learning when learning cell embeddings in an online fashion (implemented for scVI, scANVI & totalVI)
 ### CITE-seq
-- [totalVI](https://www.nature.com/articles/s41592-020-01050-x.epdf?sharing_token=F_xpBUwgD5vHVAB5jvU0c9RgN0jAjWel9jnR3ZoTv0NDA6nPyssLQkWDcY8VB7gLKdlD8q3cqpF5ovLZjZTudaweTnzODEXCrkjJ2UJEEpOAhfOCwEZ0h0Y2WTkn_GOBfGUZhH-lzX_u_AswArGFGinU1pcuXPvuTkPrrQI4zko%3D) for analysis of CITE-seq data.
+- [totalVI](https://www.nature.com/articles/s41592-020-01050-x) for analysis of CITE-seq data.
 
 ### Spatial transcriptomics
 - [Steroscope](https://www.nature.com/articles/s42003-020-01247-y) for deconvolution of spatial transcriptomics data.
 - [gimVI](https://arxiv.org/pdf/1905.02269.pdf) for imputation of missing genes in spatial transcriptomics from scRNA-seq data.
+- [DestVI](https://www.biorxiv.org/content/10.1101/2021.05.10.443517v1) for multi-resolution deconvolution of spatial transcriptomics data.
 
 ### scATAC-seq
-- peakVI for analysis of single-cell ATAC sequencing profiles
+- [peakVI](https://www.biorxiv.org/content/10.1101/2021.04.29.442020v1) for analysis of single-cell ATAC sequencing profiles
 
 ## Methods developer toolkit
 
