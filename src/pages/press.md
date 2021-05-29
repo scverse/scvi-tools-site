@@ -8,7 +8,12 @@
 
 
 ## Publications
-
+- Multi-resolution deconvolution of spatial transcriptomics data reveals continuous patterns of inflammation.
+R. Lopez\*, B. Li\*, H. Keren-Shaul\*, P. Boyeau, M. Kedmi, D. Pilzer, A. Jelinski, E. David, A. Wagner, Y. Addadi, M.I. Jordan, I. Amit†, N. Yosef†
+*bioRxiv*, 2021
+- scvi-tools: a library for deep probabilistic analysis of single-cell omics data.
+A. Gayoso\*, R. Lopez\*, G. Xing\*, P. Boyeau, K. Wu, M. Jayasuriya, E. Mehlman, M. Langevin, Y. Liu, J. Samaran, G. Misrachi, A. Nazaret, O. Clivio, C. Xu, T. Ashuach, M. Lotfollahi, V. Svensson, E. Beltrame, C. Talavera-Lopez, L. Pachter, F.J. Theis, A. Streets, M.I. Jordan, J. Regier, N. Yosef.
+*bioRxiv*, 2021
  - Joint probabilistic modeling of single-cell multi-omic data with totalVI.
 A. Gayoso\*, Z. Steier\*, R. Lopez, J. Regier, KL. Nazor, A. Streets†, N Yosef†.
 *Nature Methods*, 2021
@@ -50,7 +55,8 @@ R. Lopez, J. Regier, MB. Cole, M. Jordan, N. Yosef.
 - [*The Bioinformatics Chat Podcast*: scVI with Romain Lopez and Gabriel Misrachi](https://bioinformatics.chat/scvi)
 
 ## Talks
-
+- [PyData, AI & Single-Cell Genomics: scVI and scvi-tools](https://youtu.be/tpf-BgqNxwY?t=5185)
+- [*MIT 6.874, Deep Learning in the Life*: Deep generative modeling for single-cell transcriptomics](https://youtu.be/NNOkdgE4jNM?t=2783)
 - [*Regev Lab, Cell Circuits and Epigenomics, and MIA special seminar*: Deep generative modeling for single-cell transcriptomics](https://www.broadinstitute.org/talks/regev-lab-cell-circuits-and-epigenomics-and-mia-special-seminar-deep-generative-modeling)
 - [*Berkeley CCB skills seminar*: Single-cell data analysis with Scanpy and scvi-tools](https://ccbskillssem.github.io/pages/scanpy_scvi_tools/)
 - [*Bay Area Machine Learning Symposium*: A deep generative model for semi-supervised classification with noisy labels](https://www.youtube.com/watch?v=A2Sv0AUA27I)

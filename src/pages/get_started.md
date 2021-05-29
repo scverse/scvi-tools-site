@@ -37,15 +37,33 @@ To leverage a GPU for inference, a version of [PyTorch](https://pytorch.org/get-
 - [SOLO](https://www.sciencedirect.com/science/article/pii/S2405471220301952) for detection of doublets.
 - [scArches](https://www.biorxiv.org/content/10.1101/2020.07.16.205997v1) for transfer learning when learning cell embeddings in an online fashion (implemented for scVI, scANVI & totalVI)
 ### CITE-seq
-- [totalVI](https://www.nature.com/articles/s41592-020-01050-x.epdf?sharing_token=F_xpBUwgD5vHVAB5jvU0c9RgN0jAjWel9jnR3ZoTv0NDA6nPyssLQkWDcY8VB7gLKdlD8q3cqpF5ovLZjZTudaweTnzODEXCrkjJ2UJEEpOAhfOCwEZ0h0Y2WTkn_GOBfGUZhH-lzX_u_AswArGFGinU1pcuXPvuTkPrrQI4zko%3D) for analysis of CITE-seq data.
+- [totalVI](https://www.nature.com/articles/s41592-020-01050-x) for analysis of CITE-seq data.
 
 ### Spatial transcriptomics
 - [Steroscope](https://www.nature.com/articles/s42003-020-01247-y) for deconvolution of spatial transcriptomics data.
 - [gimVI](https://arxiv.org/pdf/1905.02269.pdf) for imputation of missing genes in spatial transcriptomics from scRNA-seq data.
+- [DestVI](https://www.biorxiv.org/content/10.1101/2021.05.10.443517v1) for multi-resolution deconvolution of spatial transcriptomics data.
 
 ### scATAC-seq
-- peakVI for analysis of single-cell ATAC sequencing profiles
+- [peakVI](https://www.biorxiv.org/content/10.1101/2021.04.29.442020v1) for analysis of single-cell ATAC sequencing profiles
 
 ## Methods developer toolkit
 
 `scvi-tools` is a high-level probabilistic programming package especially developped for single-cell omics data. We hope it will empower method developers and help them focus on building fruitful models. To achieve this, we host black-box primitives for loading data from [AnnData](https://anndata.readthedocs.io/en/latest/), black-box training procedures using [PyTorch Lightning](https://www.pytorchlightning.ai/), and optionally provides automatic inference recipes based on [Pyro](https://pyro.ai/). We currently support many optimization-based inference procedures including SVI, AEVB, MAP, MLE and EM. To learn more about the developer toolkit, please visit our [tutorials](https://docs.scvi-tools.org/en/latest/user_guide/index.html). We also provide an example [skeleton](https://github.com/YosefLab/scvi-tools-skeleton/) implementation of a basic scVI in PyTorch and Pyro as an independant package based off `scvi-tools`. If you wish to add an implementation of your algorithm in scvi-tools, please post a [GitHub issue](https://github.com/YosefLab/scvi-tools/issues) to reach out to us.
+
+## Reference
+
+If you use scvi-tools in your research, please consider citing
+
+```
+@article{Gayoso2021scvitools,
+	author = {Gayoso, Adam and Lopez, Romain and Xing, Galen and Boyeau, Pierre and Wu, Katherine and Jayasuriya, Michael and Mehlman, Edouard and Langevin, Maxime and Liu, Yining and Samaran, Jules and Misrachi, Gabriel and Nazaret, Achille and Clivio, Oscar and Xu, Chenling and Ashuach, Tal and Lotfollahi, Mohammad and Svensson, Valentine and da Veiga Beltrame, Eduardo and Talavera-Lopez, Carlos and Pachter, Lior and Theis, Fabian J and Streets, Aaron and Jordan, Michael I and Regier, Jeffrey and Yosef, Nir},
+	title = {scvi-tools: a library for deep probabilistic analysis of single-cell omics data},
+	year = {2021},
+	doi = {10.1101/2021.04.28.441833},
+	publisher = {Cold Spring Harbor Laboratory},
+	URL = {https://www.biorxiv.org/content/early/2021/04/29/2021.04.28.441833},
+	eprint = {https://www.biorxiv.org/content/early/2021/04/29/2021.04.28.441833.full.pdf},
+	journal = {bioRxiv}
+}
+```
