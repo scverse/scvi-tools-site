@@ -80,10 +80,10 @@ module.exports = {
               label: 'Ecosystem',
               to: "ecosystem",
             },
-            {
-              label: 'News',
-              to: "news",
-            },
+            // {
+            //   label: 'News',
+            //   to: "news",
+            // },
             // ... more items
           ],
         },

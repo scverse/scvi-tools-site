@@ -16,6 +16,15 @@ conda install scvi-tools -c bioconda -c conda-forge
 
 To leverage a GPU for inference, a version of [PyTorch](https://pytorch.org/get-started/locally/) that supports your GPU will need to be installed separately.
 
+
+## Resources
+
+- Tutorials, API reference, and advanced installation guides are available in the [docs](https://docs.scvi-tools.org/en/stable/).
+-  For discussion of usage, checkout out our [forum](https://discourse.scvi-tools.org/).
+-  For immediate public chat with the developers, come talk to us on [Gitter](https://gitter.im/scvi-tools/).
+-  For a skeleton of implementation of a new model in scvi-tools, refer to our [template repository](https://github.com/YosefLab/scvi-tools-skeleton/)
+-  To report bugs, make an issue on [GitHub](https://github.com/YosefLab/scvi-tools/issues).
+
 ## Single-cell omics data analysis
 
 `scvi-tools` hosts implementations of many models, with a convenient interface to [scanpy](https://scanpy.readthedocs.io/en/stable/), [Seurat](https://satijalab.org/seurat/) and [Bioconductor](https://www.bioconductor.org/) (refer to our tutorials to learn about our R support):
@@ -24,7 +33,7 @@ To leverage a GPU for inference, a version of [PyTorch](https://pytorch.org/get-
 - [scVI](https://rdcu.be/bdHYQ) for analysis of single-cell RNA-seq data, as well as its improved [differential expression framework](https://www.biorxiv.org/content/biorxiv/early/2019/10/04/794289.full.pdf).
 - [LDVAE](https://academic.oup.com/bioinformatics/article/36/11/3418/5807606) for an interpretable linear factor model version of scVI.
 - [scANVI](https://www.embopress.org/doi/full/10.15252/msb.20209620) for cell annotation of scRNA-seq data using semi-labeled examples.
-- [CellAssign](https://www.nature.com/articles/s41592-019-0529-1) for cell annotation of scRNA-seq data using marker genes. 
+- [CellAssign](https://www.nature.com/articles/s41592-019-0529-1) for cell annotation of scRNA-seq data using marker genes.
 - [SOLO](https://www.sciencedirect.com/science/article/pii/S2405471220301952) for detection of doublets.
 - [scArches](https://www.biorxiv.org/content/10.1101/2020.07.16.205997v1) for transfer learning when learning cell embeddings in an online fashion (implemented for scVI, scANVI & totalVI)
 ### CITE-seq
@@ -40,11 +49,3 @@ To leverage a GPU for inference, a version of [PyTorch](https://pytorch.org/get-
 ## Methods developer toolkit
 
 `scvi-tools` is a high-level probabilistic programming package especially developped for single-cell omics data. We hope it will empower method developers and help them focus on building fruitful models. To achieve this, we host black-box primitives for loading data from [AnnData](https://anndata.readthedocs.io/en/latest/), black-box training procedures using [PyTorch Lightning](https://www.pytorchlightning.ai/), and optionally provides automatic inference recipes based on [Pyro](https://pyro.ai/). We currently support many optimization-based inference procedures including SVI, AEVB, MAP, MLE and EM. To learn more about the developer toolkit, please visit our [tutorials](https://docs.scvi-tools.org/en/latest/user_guide/index.html). We also provide an example [skeleton](https://github.com/YosefLab/scvi-tools-skeleton/) implementation of a basic scVI in PyTorch and Pyro as an independant package based off `scvi-tools`. If you wish to add an implementation of your algorithm in scvi-tools, please post a [GitHub issue](https://github.com/YosefLab/scvi-tools/issues) to reach out to us.
-
-## Resources
-
-- Tutorials, API reference, and advanced installation guides are available in the [docs](https://docs.scvi-tools.org/en/stable/).
--  For discussion of usage, checkout out our [forum](https://discourse.scvi-tools.org/).
--  For immediate public chat with the developers, come talk to us on [Gitter](https://gitter.im/scvi-tools/).
--  For a skeleton of implementation of a new model in scvi-tools, refer to our [template repository](https://github.com/YosefLab/scvi-tools-skeleton/)
--  To report bugs, make an issue on [GitHub](https://github.com/YosefLab/scvi-tools/issues).
