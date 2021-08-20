@@ -1,24 +1,26 @@
 .teamCard {
-    margin: 10px 0 10px 0;
-    background-color: rgba(0,0,0,0.05);
-    html[data-theme="dark"] & {
-        background-color: rgba(255,255,255,0.05);
-    }
+  max-width: 400px;
+  min-width: none;
+  margin: 10px 0 10px 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  html[data-theme="dark"] & {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
 
-    .teamAvatar {
-        margin: 10px;
-    }
+  .teamAvatar {
+    margin: 10px;
+  }
 
-    .teamCardContent {
-        justify-content: flex-start;
+  .teamCardContent {
+    justify-content: flex-start;
 
-        .teamCardName {
-            font-weight: bold; 
-        }
+    .teamCardName {
+      font-weight: bold;
     }
+  }
 
-    .iconContainer {
-        display: flex;
-        justify-content: flex-start;
-    }
+  .iconContainer {
+    display: flex;
+    justify-content: flex-start;
+  }
 }

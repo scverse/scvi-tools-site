@@ -7,7 +7,6 @@ import styles from "./styles.module.scss";
 const _DEFAULT_IMAGE_URL = "../../../static/img/logo.svg";
 
 function TeamCard(props) {
-
   const {
     name,
     websiteLink,
@@ -25,13 +24,17 @@ function TeamCard(props) {
           src={image || _DEFAULT_IMAGE_URL}
         />
         <div className={`${styles.teamCardContent} avatar__intro`}>
-          {
-            websiteLink ? (
-            <a className={`${styles.teamCardName} avatar__name`} href={websiteLink} target="_blank">{name}</a>
-            ) : (
-            <div className={`${styles.teamCardName} avatar__name`} >{name}</div>
-            )
-          }
+          {websiteLink ? (
+            <a
+              className={`${styles.teamCardName} avatar__name`}
+              href={websiteLink}
+              target="_blank"
+            >
+              {name}
+            </a>
+          ) : (
+            <div className={`${styles.teamCardName} avatar__name`}>{name}</div>
+          )}
           <small className="avatar__subtitle">{description}</small>
           <div className={styles.iconContainer}>
             <IconLink icon={faGithub} link={githubLink}></IconLink>
