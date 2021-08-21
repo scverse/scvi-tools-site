@@ -1,10 +1,11 @@
 import React from "react";
 import IconLink from "@theme/IconLink";
+import useBaseUrl from "@docusaurus/useBaseUrl"
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 import styles from "./styles.module.scss";
 
-const _DEFAULT_IMAGE_URL = "../../../static/img/logo.svg";
+const _DEFAULT_IMAGE_URL = useBaseUrl("`img/logo.svg`);
 
 function TeamCard(props) {
   const {
