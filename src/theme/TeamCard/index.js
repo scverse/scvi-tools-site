@@ -20,7 +20,7 @@ function TeamCard(props) {
       <div className={`${styles.teamAvatar} avatar`}>
         <img
           className="avatar__photo avatar__photo--xl"
-          src={useBaseUrl(`img/logo.svg`)}
+          src={image || useBaseUrl(`img/logo.svg`)}
         />
         <div className={`${styles.teamCardContent} avatar__intro`}>
           {websiteLink ? (
