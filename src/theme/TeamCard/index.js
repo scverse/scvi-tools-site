@@ -5,8 +5,6 @@ import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 import styles from "./styles.module.scss";
 
-const _DEFAULT_IMAGE_URL = useBaseUrl("img/logo.svg");
-
 function TeamCard(props) {
   const {
     name,
@@ -22,7 +20,7 @@ function TeamCard(props) {
       <div className={`${styles.teamAvatar} avatar`}>
         <img
           className="avatar__photo avatar__photo--xl"
-          src={image || _DEFAULT_IMAGE_URL}
+          src={useBaseUrl(`img/logo.svg`)}
         />
         <div className={`${styles.teamCardContent} avatar__intro`}>
           {websiteLink ? (
