@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{71:function(o){o.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"scvi-tools","name":"scvi-tools","count":1,"permalink":"/blog/tags/scvi-tools"}')}}]);
