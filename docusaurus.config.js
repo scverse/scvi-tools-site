@@ -11,15 +11,13 @@ module.exports = {
   favicon: "img/favicon.ico",
   organizationName: "YosefLab", // Usually your GitHub org/user name.
   projectName: "scvi-tools-site", // Usually your repo name.
-  stylesheets: [
-    "https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css",
-  ],
+  stylesheets: ["https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"],
   themeConfig: {
     googleAnalytics: {
-      trackingID: 'UA-141905405-3',
+      trackingID: "UA-141905405-3",
     },
     prism: {
-      defaultLanguage: 'python',
+      defaultLanguage: "python",
       theme: require("prism-react-renderer/themes/github"),
       darkTheme: require("prism-react-renderer/themes/dracula"),
     },
@@ -45,39 +43,46 @@ module.exports = {
           href: "https://docs.scvi-tools.org",
           label: "Docs",
           position: "right",
+          target: "_self",
           items: [
             {
-              label: 'Full documentation',
+              label: "Full documentation",
               href: "https://docs.scvi-tools.org",
+              target: "_self",
             },
             {
-              label: 'User guide',
-              href: "https://docs.scvi-tools.org/en/stable/user_guide/user.html",
+              label: "User guide",
+              href:
+                "https://docs.scvi-tools.org/en/stable/user_guide/user.html",
+              target: "_self",
             },
             {
-              label: 'Developer guide',
-              href: "https://docs.scvi-tools.org/en/stable/user_guide/developer.html",
+              label: "Developer guide",
+              href:
+                "https://docs.scvi-tools.org/en/stable/user_guide/developer.html",
+              target: "_self",
             },
             {
-              label: 'API reference',
+              label: "API reference",
               href: "https://docs.scvi-tools.org/en/stable/api/index.html",
+              target: "_self",
             },
           ],
         },
         {
-          label: 'About',
-          position: 'right', // or 'right'
+          label: "About",
+          position: "right", // or 'right'
           items: [
             {
-              label: 'Team',
+              label: "Team",
               to: "team",
             },
             {
-              label: 'Press',
+              label: "Press",
               to: "press",
             },
             {
-              label: 'Ecosystem',
+              label: "Ecosystem",
               to: "ecosystem",
             },
             // {
@@ -111,20 +116,18 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
-          path: 'get_started',
-          routeBasePath: 'get_started',
+          path: "get_started",
+          routeBasePath: "get_started",
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/YosefLab/scvi-tools-site",
+          editUrl: "https://github.com/YosefLab/scvi-tools-site",
           remarkPlugins: [math],
           rehypePlugins: [[katex, { strict: false }]],
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/YosefLab/scvi-tools-site/blog/",
+          editUrl: "https://github.com/YosefLab/scvi-tools-site/blog/",
           remarkPlugins: [math],
           rehypePlugins: [[katex, { strict: false }]],
         },

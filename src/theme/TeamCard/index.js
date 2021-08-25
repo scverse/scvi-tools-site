@@ -1,6 +1,6 @@
 import React from "react";
 import IconLink from "@theme/IconLink";
-import useBaseUrl from "@docusaurus/useBaseUrl"
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 import styles from "./styles.module.scss";
