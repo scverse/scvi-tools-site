@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkscvi_tools_site=self.webpackChunkscvi_tools_site||[]).push([[244],{1925:function(s){s.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"scvi-tools","name":"scvi-tools","count":1,"permalink":"/blog/tags/scvi-tools"}')}}]);

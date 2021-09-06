@@ -13,6 +13,9 @@
         <link href="https://scvi-tools.org/blog/v090"/>
         <updated>2021-03-03T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Today we officially released scvi-tools version 0.9.0 (changelog). This release marks the culmination of five months of work on the backend of the codebase, which came after three months of work on the frontend.]]></summary>
+        <author>
+            <name>Adam Gayoso, Romain Lopez, Galen Xing, Nir Yosef</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hyperparameter search for scVI]]></title>
@@ -20,6 +23,9 @@
         <link href="https://scvi-tools.org/blog/autotune"/>
         <updated>2019-07-05T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A study of the effects of hyperparameter optimization on scVI models.]]></summary>
+        <author>
+            <name>Gabriel Misrachi, Jeffrey Regier, Romain Lopez, Nir Yosef</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Should we zero-inflate scVI?]]></title>
@@ -27,5 +33,8 @@
         <link href="https://scvi-tools.org/blog/zero-inflation"/>
         <updated>2019-06-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Droplet- based single-cell RNA sequencing (scRNA-seq) datasets typically contain at least 90% zero entries. How can we best model these zeros? Recent work focused on modeling zeros with a mixture of count distributions. The first component is meant to reflect whether such an entry can be explained solely by the limited amount of sampling (on average ~5% or less of the molecules in the cell). The second component is generally used to reflect "surprising" zeros caused by measurement bias, transient transcriptional noise (e.g., "bursty" gene with a short mRNA half life), or true longer-term heterogeneity that can not be captured by a similified (low dimensional) representation of the data. Among others, zero-inflated distributions (i.e., zero-inflated negative binomial) have been widely adopted to model gene expression levels (1, 2).]]></summary>
+        <author>
+            <name>Oscar Clivio, Pierre Boyeau, Romain Lopez, Jeffrey Regier, Nir Yosef</name>
+        </author>
     </entry>
 </feed>
