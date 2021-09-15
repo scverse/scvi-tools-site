@@ -2,8 +2,11 @@
 
 Here we highlight projects that make use of scvi-tools.
 
+## [cell2location](https://cell2location.readthedocs.io/en/latest/)
+cell2location is a hierarchical Bayesian model for resolving cell types in spatial transcriptomic data (e.g., Visium) with high sensitivty. 
+
 ## [scArches](https://scarches.readthedocs.io/en/latest/)
-scArches allows for the integration of new "query" data into reference atlases produced with conditional deep generative models such as scVI, scANVI, totalVI and PeakVI.
+scArches allows for the integration of new query data into reference atlases produced with conditional deep generative models such as trVAE, scVI, scANVI, totalVI and PeakVI.
 
 ## [scGen](https://github.com/theislab/scgen/)
 scGen is a generative model to predict single-cell perturbation response across cell types, studies and species. scGen is implemented using the scvi-tools framework.
