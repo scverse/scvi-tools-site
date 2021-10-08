@@ -9,8 +9,8 @@ module.exports = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "YosefLab", // Usually your GitHub org/user name.
-  projectName: "scvi-tools-site", // Usually your repo name.
+  organizationName: "YosefLab",
+  projectName: "scvi-tools-site",
   stylesheets: ["https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"],
   themeConfig: {
     googleAnalytics: {
@@ -32,18 +32,10 @@ module.exports = {
         src: "img/logo.svg",
       },
       items: [
-        // {
-        //   type: "doc",
-        //   label: "Get Started",
-        //   docId: "get_started",
-        //   position: "right",
-        // },
         { to: "get_started", label: "Get Started", position: "right" },
         {
-          href: "https://docs.scvi-tools.org",
           label: "Docs",
           position: "right",
-          target: "_self",
           items: [
             {
               label: "Full documentation",
@@ -51,15 +43,15 @@ module.exports = {
               target: "_self",
             },
             {
-              label: "User guide",
+              label: "Tutorials",
               href:
-                "https://docs.scvi-tools.org/en/stable/user_guide/user.html",
+                "https://docs.scvi-tools.org/en/stable/tutorials/index.html",
               target: "_self",
             },
             {
-              label: "Developer guide",
+              label: "User guide",
               href:
-                "https://docs.scvi-tools.org/en/stable/user_guide/developer.html",
+                "https://docs.scvi-tools.org/en/stable/user_guide/index.html",
               target: "_self",
             },
             {
@@ -71,7 +63,7 @@ module.exports = {
         },
         {
           label: "About",
-          position: "right", // or 'right'
+          position: "right",
           items: [
             {
               label: "Team",
@@ -85,11 +77,6 @@ module.exports = {
               label: "Ecosystem",
               to: "ecosystem",
             },
-            // {
-            //   label: 'News',
-            //   to: "news",
-            // },
-            // ... more items
           ],
         },
         { to: "blog", label: "Blog", position: "right" },
@@ -119,14 +106,12 @@ module.exports = {
           path: "get_started",
           routeBasePath: "get_started",
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
           editUrl: "https://github.com/YosefLab/scvi-tools-site",
           remarkPlugins: [math],
           rehypePlugins: [[katex, { strict: false }]],
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl: "https://github.com/YosefLab/scvi-tools-site/blog/",
           remarkPlugins: [math],
           rehypePlugins: [[katex, { strict: false }]],
