@@ -8,11 +8,11 @@
 
 
 ## Publications
+- A Python library for probabilistic analysis of single-cell omics data.
+A. Gayoso\*, R. Lopez\*, G. Xing\*, P. Boyeau, V. Valiollah Pour Amiri, J. Hong, K. Wu, M. Jayasuriya, E. Mehlman, M. Langevin, Y. Liu, J. Samaran, G. Misrachi, A. Nazaret, O. Clivio, C. Xu, T. Ashuach, M. Lotfollahi, V. Svensson, E. Beltrame, V. Kleshchevnikov, C. Talavera-Lopez, L. Pachter, F.J. Theis, A. Streets, M.I. Jordan, J. Regier, N. Yosef.
+*Nature Biotechnology*, 2022
 - Multi-resolution deconvolution of spatial transcriptomics data reveals continuous patterns of inflammation.
 R. Lopez\*, B. Li\*, H. Keren-Shaul\*, P. Boyeau, M. Kedmi, D. Pilzer, A. Jelinski, E. David, A. Wagner, Y. Addadi, M.I. Jordan, I. Amit†, N. Yosef†
-*bioRxiv*, 2021
-- scvi-tools: a library for deep probabilistic analysis of single-cell omics data.
-A. Gayoso\*, R. Lopez\*, G. Xing\*, P. Boyeau, K. Wu, M. Jayasuriya, E. Mehlman, M. Langevin, Y. Liu, J. Samaran, G. Misrachi, A. Nazaret, O. Clivio, C. Xu, T. Ashuach, M. Lotfollahi, V. Svensson, E. Beltrame, C. Talavera-Lopez, L. Pachter, F.J. Theis, A. Streets, M.I. Jordan, J. Regier, N. Yosef.
 *bioRxiv*, 2021
  - Joint probabilistic modeling of single-cell multi-omic data with totalVI.
 A. Gayoso\*, Z. Steier\*, R. Lopez, J. Regier, KL. Nazor, A. Streets†, N Yosef†.
