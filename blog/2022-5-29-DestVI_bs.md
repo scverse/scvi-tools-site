@@ -1,6 +1,6 @@
 ---
 slug: destvi-batchsize
-title:      Minibatch size is an essential hyperparameter to train destVI with small number of spots
+title:      Mini-batch size in destVI
 date:       2022-05-29
 author: Can Ergen, Romain Lopez, Nir Yosef
 tags: [destvi, batch-size]
@@ -32,7 +32,7 @@ As most experiments before the destVI publication as well as the benchmarking st
 We reused the STARmap dataset from the original publication. In short this is a dataset from mouse brain cortex. The single-cell reference contains 14249 cells by 34041 genes. It contains data from several mouse lines, both sexes and from various time points that were sorted by flow cytometry and sequentially sequenced. The STARmap dataset contains 1523 cells by 981 genes. The simulation is to sum all counts over a window size of 750 pixels. This gives a pseudo-spot count matrix with 189 spots and 1-17 cells per spot. For further reference, we refer to the original publication (3). We subset this dataset to 57 spots to see how destVI performs in the case of even lower number of spots by subsetting this data to the first three column as diversity of cell-types is mainly along the cortical axis and subsetting to columns keeps the complexity of the dataset similar.
 For a regime with more spots, we decided to keep the organ of interest (mouse brain) and use a dataset with a much higher number of cell captured. We reproduced for this matter the analysis provided by Vizgen using MERFISH technology, which provides a walk-through tutorial on Google Colab. 
 
-<img alt="Synthetic" width="80%" src={'img/destvi-batchsize/vizgen_colab.png'}/> 
+<img alt="MERFISH_data" width="100%" src={useBaseUrl('img/blog-post-destvi-batchsize/vizgen_colab.png')}/> 
 
 Figure 1: Overview of MERFISH brain dataset from (https://colab.research.google.com/drive/1OxJRO19cPsDW0JGAh4tLJjgOl7EMxQbP?usp=sharing&__hstc=30510752.37206d737856c71bb0a5d1c8f6764b63.1652985789816.1653807477271.1653882474080.8&__hssc=30510752.1.1653882474080&__hsfp=455698764&hsCtaTracking=070f4af1-2595-44c8-9779-4da89d538482%7Cf4313de5-25c4-4677-9fd6-82cf71d4fdc4).
 
@@ -42,7 +42,7 @@ This analysis yields a single-cell reference dataset with 160796 cells by 27998 
 
 First, we verified that by using the updated version of the code in scvi-tools v0.16.0, we get similar results to the benchmarking study. In agreement with the original publication, the layer structure of neurons in different cortical layers wasn't visible. Similar to the original publication xkprint(distances.mean)print(distances.mean)print(distances.mean)modeling cell-type proportions as a free parameter leads to no visible structure at all. When using amortized cell-type proportions, which uses a neural network to estimate cell-type proportions, destVI predicted astrocytes correctly, while it wasn't capable of differentiating different excitatory neurons but were classifying all neurons as a single mixture. Decreasing the training mini-batch size drastically improves the performance of both algorithms.  Of note the model with a mini-batch size of 32 and both parameters amortized performs badly. We see good deconvolution of the different neuronal layers with a batch size of 8, 12 and 16. Additionally, for these batch size there was no qualitative difference between both amortization and latent amortization. When comparing the results of destVI with Cell2Location it becomes clear that Cell2Location outperforms destVI for cell-types like Pvalp or Smc cells while both algorithms fail on microglia. The reason for better performance of Cell2Location is most likely low number of those cell-types in the spatial dataset and therefore low percentage in the respective spot. The bad performance for microglia might be based on the selection of FISH probes giving a low coverage of myeloid cell heterogeneity.
 
-<img alt="Synthetic" width="80%" src={useBaseUrl('img/destvi-batchsize/STARmap.png')}/>
+<img alt="STARmap" width="100%" src={useBaseUrl('img/blog-post-destvi-batchsize/STARmap.png')}/>
 
 Figure 2: Results on benchmarking dataset. Left-to-right ground truth, Cell2Location, DestVI with both amortization and batch-size 8, 16, 48, 128 and DestVI with latent amortization with same batch size. Increase in matching proportions for destVI with decreasing mini-batch size. Cell2Location outperforms destVI for Oligodendrocytes. Quantitative measurues (PCC=Pearson Correlation Coefficient, SSIM=Structural Similarity, RMSE=Root Mean Squared Error, JSD=Jensen-Shannon-Divergence) show on par performance for destVI with a mini-batch size below 16.
 
@@ -65,7 +65,7 @@ When checking quantitative results, we find an on par performance of destVI and 
 
 As demonstrated here, by reducing the size of the training mini-batch destVI yields overall similar performance to Cell2Location for cell-type deconvolution. We asked next whether this is also the case when even further reducing the number of spots. For this study, as described above we subset the number of pseudospots and retrained Cell2Location and destVI. Overall, we find better agreement with both amortization for different sizes of training batch size. Oligodendrocytes and Astrocytes are correctly predicted in all version with both amortization. Only the models with a batch size of 4 differentiate between the different layers of excitatory neurons. Of note, latent amortization outperforms both amortization here for a mini-batch size of 4. It might be an effect of small training size, so that the amortization network can not be trained well. We generally wouldn't recommend to use spatial deconvolution techniques for such low number of spots. Given the higher stability over a various number of mini-batch sizes, we prefer to recommend the both amortization scheme. In cases with very few examples and known ground-truth we advise training both models and comparing the results.
 
-<img alt="Synthetic" width="80%" src={useBaseUrl('img/destvi-batchsize/STARmap_sub.png')}/>
+<img alt="STARmap_sub" width="100%" src={useBaseUrl('img/blog-post-destvi-batchsize/STARmap_sub.png')}/>
 
 Figure 3: Results on subset of benchmarking dataset. Subset on first three columns in original dataset. Displayed are only neuron layers as structure in other celltypes is hardly detected with only three columns. For ground-truth, we display all columns to allow easier comparison. Left-to-right ground truth, Cell2Location, DestVI with both amortization and batch-size 4, 8, 12, 16, 32 and DestVI with latent amortization with same batch size. On par performance with mini-batch size 4 and latent amortization is visible with slightly reduced performance in both amortization.
 
@@ -106,7 +106,7 @@ Overall, for all combinations of parameters we see improved performance of destV
 
 Overall we see that performance is stable up to a batch size of 256 with decreasing performance for both amortization and batch size 512 and 1024, while performance of latent amortization is stable with increasing batch size. We postulate that mini-batch training of the cell-type amortization network is essential for performance. As above we have seen speed improvement by using a bigger batch size, we asked whether bigger batch sizes are good in performance, when we train them for more epochs. Indeed increasing the number of epochs for mini-batch size 512 lead to on par performance using 5000 instead of the default 2500 training epochs, while performance of mini-batch size 1024 was still inferior when checking with 10000 training epochs.
 
-<img alt="Synthetic" width="80%" src={useBaseUrl('img/destvi-batchsize/MERFISH2.png')}/>
+<img alt="MERFISH" width="100%" src={useBaseUrl('img/blog-post-destvi-batchsize/MERFISH2.png')}/>
 
 Figure 4: Results on MERFISH brain dataset. Left-to-right ground truth, Cell2Location, DestVI with both amortization and batch-size 32, 128, 256, 1024 and DestVI with latent amortization with same batch size. Cell type proportion estimates are improved over Cell2Location in all destVI models. There is a decrease in performance for models with batch_size 1024 for endothelial cells, that are low abundant in every spot.
 
@@ -127,6 +127,9 @@ We acknowledge members of the Yosef Lab. We thank Adam Gayoso for reviewing the 
 ## Bibliography
 
 (1) Romain Lopez, Baoguo Li, Hadas Keren-Shaul, Pierre Boyeau, Merav Kedmi, David Pilzer, Adam Jelinski, Ido Yofe, Eyal David, Allon Wagner, Can Ergen, Yoseph Addadi, Ofra Golani, Franca Ronchese, Michael I. Jordan, Ido Amit and Nir Yosef. DestVI identifies continuums of cell types in spatial transcriptomics data. Nature Biotechnology. 2022.
+
 (2) Vitalii Kleshchevnikov, Artem Shmatko, Emma Dann, Alexander Aivazidis, Hamish W. King, Tong Li, Rasa Elmentaite, Artem Lomakin, Veronika Kedlian, Adam Gayoso, Mika Sarkin Jain, Jun Sung Park, Lauma Ramona, Elizabeth Tuck, Anna Arutyunyan, Roser Vento-Tormo, Moritz Gerstung, Louisa James, Oliver Stegle and Omer Ali Bayraktar.  Deep generative modeling for single-cell transcriptomics. Nature Biotechnology. 2022.
+
 (3) Bin Li, Wen Zhang, Chuang Guo, Hao Xu, Longfei Li, Minghao Fang, Yinlei Hu, Xinye Zhang, Xinfeng Yao, Meifang Tang, Ke Liu, Xuetong Zhao, Jun Lin, Linzhao Cheng, Falai Chen, Tian Xue and Kun Qu. Benchmarking spatial and single-cell transcriptomics integration methods for transcript distribution prediction and cell type deconvolution. Nature Methods. 2022.
+
 (4) Dominic Masters, Carlo Luschi. Revisiting Small Batch Training for Deep Neural Networks. arXiv. 2018.
