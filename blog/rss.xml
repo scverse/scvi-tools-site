@@ -4,9 +4,16 @@
         <title>scvi-tools Blog</title>
         <link>https://scvi-tools.org/blog</link>
         <description>scvi-tools Blog</description>
-        <lastBuildDate>Wed, 03 Mar 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 29 May 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Mini-batch size in destVI]]></title>
+            <link>https://scvi-tools.org/blog/destvi-batchsize</link>
+            <guid>destvi-batchsize</guid>
+            <pubDate>Sun, 29 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[The task of deconvolution of spot-based spatial transcriptomics (ST) data consists in finding the cellular composition in spots of ST assays. Indeed, by design each spot consists of several individual cells. Our lab developed destVI as a tool to study cell type composition of spots (1). In the case where one expects within cell type variation (i.e., activation states), DestVI was designed to infer the activation state of individual cell types in each spot and therefore gives additional resolution of cell composition over competing algorithms. In our own benchmarking of destVI, we found comparable performance in prediction of cell type proportions to other state of the art algorithms like Cell2Location (2). A recent benchmarking study compared the performance of several gene imputation as well as deconvolution methods. Given the ever increasing number of deconvolution methods, the effort to benchmark those tools on a variety of simulated data is timely (3). In two of the benchmarking cases, DestVI had the worst performance. Along with the recent acceptance of the manuscript, we published several fixes to the codebase in scvi-tools v0.16.0, repeated those experiments and analyzed the reasons for failure of spot deconvolution in the given experiments. Briefly, we show that the poor performance was due to the mini-batch size used during optimization, and resolving this help recovering competitive accuracy. Additionally, we provide the user with a heuristic for future use.]]></description>
+        </item>
         <item>
             <title><![CDATA[scvi-tools 0.9.0 release]]></title>
             <link>https://scvi-tools.org/blog/v090</link>
