@@ -1,6 +1,5 @@
 const math = require("remark-math");
 const katex = require("rehype-katex");
-const prism = require('prism-react-renderer/themes/github');
 
 module.exports = {
   title: "scvi-tools",
