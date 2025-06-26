@@ -94,7 +94,7 @@ module.exports = {
     },
     footer: {
       style: "dark",
-      copyright: `Copyright © 2025, Yosef Lab, Weizmann Institute of Science. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()}, Yosef Lab, Weizmann Institute of Science. Built with Docusaurus.`,
     },
   },
   plugins: ["docusaurus-plugin-sass"],
