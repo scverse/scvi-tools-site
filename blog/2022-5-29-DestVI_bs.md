@@ -35,7 +35,7 @@ For a regime with more spots, we decided to keep the organ of interest (mouse br
 
 <img alt="MERFISH_data" width="100%" src={useBaseUrl('img/blog-post-destvi-batchsize/vizgen_colab.png')}/>
 
-Figure 1: Overview of MERFISH brain dataset from (https://colab.research.google.com/drive/1OxJRO19cPsDW0JGAh4tLJjgOl7EMxQbP?usp=sharing&__hstc=30510752.37206d737856c71bb0a5d1c8f6764b63.1652985789816.1653807477271.1653882474080.8&__hssc=30510752.1.1653882474080&__hsfp=455698764&hsCtaTracking=070f4af1-2595-44c8-9779-4da89d538482%7Cf4313de5-25c4-4677-9fd6-82cf71d4fdc4).
+Figure 1: Overview of MERFISH brain dataset from (<https://colab.research.google.com/drive/1OxJRO19cPsDW0JGAh4tLJjgOl7EMxQbP?usp=sharing&__hstc=30510752.37206d737856c71bb0a5d1c8f6764b63.1652985789816.1653807477271.1653882474080.8&__hssc=30510752.1.1653882474080&__hsfp=455698764&hsCtaTracking=070f4af1-2595-44c8-9779-4da89d538482%7Cf4313de5-25c4-4677-9fd6-82cf71d4fdc4>).
 
 This analysis yields a single-cell reference dataset with 160,796 cells by 27,998 genes and a spatial dataset with 83,546 cells by 483 genes. The simulation here is again to sum all counts of cells with a center over a window of 40 µm. We choose the size of this window to have an equal number of cells per pseudo-spot compared to the STARmap dataset. This gives a pseudo-spot count matrix with 27395 spots and 1-16 cells per spot.
 
@@ -124,13 +124,14 @@ In the analysis of destVI from the main paper, we had limited our benchmarking t
 DestVI yields not only cell-type proportion estimates but also cell-type activation estimates, the benchmarking study was designed to only study cell-type proportion estimates and we kept the same design here. Generally, we think the additional output of cell-type activation is a major benefit of DestVI over competing algorithms. We nevertheless thank the authors of the original benchmarking study to discover deficiencies of destVI with small number of spots.
 
 #### Practical recommendations
+
 We demonstrated that destVI also yields those results with a subset of the original dataset with just 57 spots. We also checked 19 spots here and destVI and Cell2Location weren't discovering the different layers of cortical neurons. We therefore recommend users to not run destVI with less than 50 spots.
 
 Over the course of our experiments, we found a training mini-batch size of max(dataset_size/10, 128) to perform well in deconvolution. We set the maximum batch size to 128 as we saw decreasing performance with a batch size of 512 for the brain dataset. Most likely it is safe to increase the mini-batch size for big datasets and getting runtime benefits. However, we have most experience from experiments with a batch size of 128 and limit the maximum batch size to this value. If runtime is a big concern, manual increase of this parameter is possible. The version with batchsize 128 was already several times faster than Cell2Location.
 
 DestVI with latent amortization showed superior performance in the setting with optimal mini-batch size in small datasets but performance was inferior for other mini-batch sizes. We continue suggesting both amortization and in the case of the brain dataset both amortization schemes were similar in performance.
 
-Please share any feedback with us via twitter (@YosefLab), through the comment section below or through scverse discourse webpage (https://discourse.scverse.org/).
+Please share any feedback with us via twitter (@YosefLab), through the comment section below or through scverse discourse webpage (<https://discourse.scverse.org/>).
 
 ## Acknowledgements
 

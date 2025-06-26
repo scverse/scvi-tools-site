@@ -1,6 +1,5 @@
----
-id: construction
-title: Model construction
----
+______________________________________________________________________
+
+## id: construction title: Model construction
 
 Coming soon.

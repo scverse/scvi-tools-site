@@ -15,16 +15,13 @@ Recently, some have questioned the zero-inflated nature of scRNA-seq data (3, 4)
 
 In this blog post, we adopt a purely computational, data-driven approach to investigate whether scRNA-seq data is zero inflated. In particular, we rely on Bayesian model selection rules to determine for a given list of scRNA-seq datasets whether a zero-inflated model can fit the data significantly better. We propose to use two natural criterions for model selection: held-out log likelihood (as in (6)) and posterior predictive checks (PPCs, as in (7)). Finally, the optimal distribution could in principle depend on the gene set and even be gene-specific within a given gene set. We therefore propose a metric to underline how much individual genes are better fitted by zero-inflated distributions.
 
-
 ## Methodology
 
 #### Models
 
 The original scVI (1) model (referred to as the *ZINB* model) uses a zero-inflated negative binomial (ZINB) likelihood to model gene expression counts. In particular, the dropout probability $p_{ng}$ for each cell $n$ and each gene $g$ is learned via a neural network $\hat p_{ng} = f_h^g(z_n)$. We compare this ZINB model to scVI modified to instead use a negative binomial likelihood (referred to as the *NB* model). The NB model is equivalent to setting $p_{ng}$ to zero.
 
-
 #### Model selection metrics
-
 
 For model selection, we first consider held-out log likelihood. The marginal log-likelihood for our model is intractable. However, we can estimate it through importance sampling, with our variational distribution as the proposal distribution. In our tables of results, we report a Kolmogorov-Smirnov statistic, hence lower is better. More details can be found in Appendix A. In addition, although this is not a metric for model comparison, we report for each dataset under scrutiny the average over all cell-gene entries of the dropout probabilities computed by the ZINB model and we report it as "ZINB dropout".
 
@@ -35,8 +32,6 @@ Some concerns can be that a model's hyperparameters play a significant part in i
 #### Statistical significance
 
 Although the number of samples used in PPCs computations did not influence much the variance of the results, we noticed that the initialization of scVI's neural nets weights could have a high impact on the value of the evaluation metrics. All experiments are hence run 100 times. Each metric is saved for all runs. We use a two-sample one-sided Wilcoxon rank-sum test with a $0.05$ significance level on each of the selected metrics for all the random initializations to decide whether one model is better than another. A model estimated to significantly outperform the other one is marked as bold in our tables of results.
-
-
 
 #### Finding zero-inflated genes
 
@@ -67,7 +62,6 @@ The synthetic datasets served as a sanity check that our methodology made sense 
 
 We first analyze the results on the ZISynth dataset for different values of the parameter $\lambda$ that controls zero-inflation. As detailed in Appendix B, the probability for a given entry $x_{ng}$ to be zero-inflated is $p_{ng} = pe^{-\lambda x_{ng}^2}$ where $p = 0.08$ and $\lambda > 0$ is a user-defined parameter. The setting $\lambda = 0$ corresponds to a uniform dropout, $\lambda \rightarrow \infty$ to the absence of zero-inflation and $0 < \lambda < \infty$ to an intermediate regime where the dropout probability for each cell-gene is a decreasing function of its expression. The results are shown in Table 1.
 
-
 <img alt="Synthetic" width="80%" src={useBaseUrl('img/blog-post-inflation/0627-synthetic-table.png')}/>
 
 Table 1: Results of the Bayesian model selection experiments on synthetic data.
@@ -82,11 +76,9 @@ For $0 < \lambda < \infty$, as $\lambda$ increases, we note that the number of m
 
 For each entry of the data matrix (cells x genes), the ZINB model jointly learns the average of the NB distribution and the dropout probability. In the scVI manuscript, we searched for correlation between dropout probabilities and quality control metric of individual cells (1) (Supplementary Figure 13). In this work, we focus instead on the distributions of inferred NB means and dropout probabilities for the zero entries of our synthetic dataset. In this test, we use simulation to investigate two categorical "types" of zeros in the data. The first group of zeros are the result of limited-sampling. The chance to have a zero of this type is negatively correlated with the negative binomial mean.  Ideally, limited-sampling zeros can be captured by the negative binomial component alone. The second type of zeros, which we refer to as dropout, are introduced as zeros that would require zero-inflation from scVI. These zeros can be introduced uniformally ($\lambda=0$) regardless of the expression level of the respective gene, or depend on the expression levels ($\lambda > 0$). In the following we tested whether scVI can distinguish those two types in an unsupervised fashion and whether the parameters of interest (i.e., inferred NB mean and inferred dropout probability) are interpretable. We report such results in Figure 1 for different values of the $\lambda$ parameter (further experimental details in appendix C).
 
-
 <img alt="NB-means-dropout" width="80%" src={useBaseUrl('img/blog-post-inflation/0624-zerostudy-dropouts.png')}/>
 
 Figure 1 : distributions of estimated dropout and NB means for different ZISynth datasets. In blue, the points corresponding to limited-sampling zeros. In red, the points corresponding to dropout zeros.
-
 
 For the uniformly zero-inflated dataset (Figure 1a) we can observe that the dropout probability and NB mean are anti-correlated : the higher the dropout probability, the lower the NB mean. This contradicts the possible expectation that the predicted NB mean would compensate a high predicted dropout with a higher value. One can note that scVI successfully captures the uniform dropout distribution, as the bulk of predicted dropout probabilities on dropout entries - generated from a uniform dropout $p_{ng} = 0.08$ probability - is located around a value close to the associated ground-truth value, as $10^{-1.1} \approx 0.8$. On the other hand, the bulk of scVI's predicted zero-inflation probabilities $\hat p_{ng}$ associated to the limited-sampling zeros is also located around a value close to $0.08$, although with a higher dispersion. Such a behavior is explained by the fact that in scVI, the neural net $f_h^g$ (refer to (1)) predicts the dropout rate from $z_n$. However, in the case of uniform dropout, $p_{ng}$ do not depend on this variable and therefore $f_h^g$ learns a constant value equal to $0.08$.
 
@@ -102,7 +94,6 @@ We note that some metrics are shown to significantly support either NB or ZINB w
 
 Table 2: Results of the Bayesian model selection experiments on the spike-in datasets.
 
-
 #### Results on real datasets
 
 We report results on the real datasets in Table 3.
@@ -111,26 +102,17 @@ On the Cortex dataset, the ZINB model performs better than the NB model on all m
 
 For each dataset, we also report the empirical proportion of zero entries in the matrix as well as the average dropout probabilities returned by the ZINB model. As expected, all of the droplet-based sequencing datasets have more frequent zero entries than the Smart-seq2 dataset. However, we notice that Cortex (Smart-Seq2) has a high average dropout probability, which suggests that a non negligible fraction of the zeros could be attributable to zero inflation. Such a result is compatible with recent hypotheses that PCR duplication or uneven fragment sampling may be responsible for zero-inflation in plate-based technologies (3). Among all the others droplet-based sequencing datasets, we see that Hemato (InDrops) and Retina (DropSeq) have an high average dropout probability when compare to Brain Small and PBMC (10x Chromium v2). Such discrepencies might be attributable to either more biological variability in these specific datasets, or the quality of the experimental assay. In future work, we will examine whether such results are consistent across datasets of the same technology and study more experimental protocols.
 
-
 <img alt="Real-datasets-results" width="80%" src={useBaseUrl('img/blog-post-inflation/0627-biological-table.png')}/>
 
 Table 3: Results of the Bayesian model selection experiments on Cortex, Hemato, Brain Small, PBMC and Retina.
-
-
-
-
-
 
 #### Finding zero-inflated genes
 
 We report an histogram of gene-specific reconstruction loss discrepencies for the Hemato dataset in Figure 2. As shown below, gene zero-inflation scores have heavy tails, corresponding to genes for which one or the other hypothesis makes more sense than the other. Non-exhaustive lists of predicted ZINB or NB genes are provided in appendix D.
 
-
 <img alt="zi-genes-results" width="60%" src={useBaseUrl('img/blog-post-inflation/0627-zi-genes.png')}/>
 
 Figure 2: Histogram of gene-specific reconstruction loss discrepencies between ZINB and NB model on the Hemato dataset
-
-
 
 ## Conclusion
 
@@ -141,8 +123,8 @@ Naturally, a more complex distribution is suitable only if it proves to fit the 
 Please share any feedback with us via twitter (@YosefLab) or through the comment section below.
 
 ## Acknowledgements
-We acknowledge members of the Yosef Lab, especially Zoë Steier and Matt Jones for remarks on some of the results on this blog post. We thank Adam Gayoso for reviewing some of the code and Gabriel Misrachi for his work on scVI's new autotune module, which is the basis for meaningful model selection.
 
+We acknowledge members of the Yosef Lab, especially Zoë Steier and Matt Jones for remarks on some of the results on this blog post. We thank Adam Gayoso for reviewing some of the code and Gabriel Misrachi for his work on scVI's new autotune module, which is the basis for meaningful model selection.
 
 ## Bibliography
 
@@ -172,8 +154,6 @@ We acknowledge members of the Yosef Lab, especially Zoë Steier and Matt Jones f
 
 (13)  Klein, A.M., et al. Droplet barcoding for single-cell transcriptomics applied to embryonic stem cells. Cell 161, 1187–1201, 2015
 
-
-
 ## Appendix A: Posterior Predictive Checks details
 
 Posterior predictive checks (PPCs) are another way to assess Bayesian models. The idea is to check if data simulated from the posterior predictive distribution of a model matches what we observe on real data. The exact pipeline we followed, adapted from (6) can be described as:
@@ -186,6 +166,7 @@ Posterior predictive checks (PPCs) are another way to assess Bayesian models. Th
 + We now have at disposal $S:=\{\hat T_g, g \in \mathcal{G}\}$ and $S^0:=\{T_g^0, g \in \mathcal{G}\}$ the set of synthetic and real observations of the discrepancy measures. A non-parametric test (2-sample Kolmogorov-Smirnov) is then applied. The obtained KS statistic is $K = \sup d(F_n , F_n^0)$, where $F_n$ and $F_n^0$ are the empirical distribution functions of $S$ and $S_0$ can be understood as a metric describing how different the synthetic and real distributions of measures are. In our experiments, $d$ is the absolute value.
 
 #### Designing the discrepancy measure
+
 Keeping in mind that we want to determine if the Negative Binomial can on its own explain the important number of zeros of scRNA data, a natural choice of T can be the *dropout ratio* - the fraction of zeros in the gene expression matrix (averaged over cells, for a specific gene). Another measure could be the *zeros-to-expression ratio* - the ratio of the number of zeros to the mean of non zero gene expressions (over all cells for a specific gene). Finally, the *coefficient of variation* defined as the standard deviation of gene expressions divided its mean can be a judicious choice as it is a standard metric in biology (8).
 
 ## Appendix B: Generative process for simulated data
@@ -201,7 +182,6 @@ The **dataset ZISynth** relies on the latter process, but by also adding zero-in
 To generate these figures, we trained ZINB-scVI with its optimal parameters - estimated with hyperopt - for each dataset under scrutiny. From that, we infer the NB mean and the dropout probability on each cell-gene entry 100 times before averaging them on the 100 inferences, again for each cell-gene entry. On the other hand, we retrieve the locations of limited sensitivity zeros and dropout using pre-computed class attributes, and we restrict the average NB means and dropouts to these zero entries.
 
 Generating the same plots with the total zero probability instead of the dropout probability leads to the following figures, hence to similar conclusions.
-
 
 <img alt="zi-zeros-results" width="80%" src={useBaseUrl('img/blog-post-inflation/0624-zerostudy-totalzeros.png')}/>
 
@@ -224,9 +204,7 @@ Figure 1bis : distributions of estimated total zero probabilities and NB means f
 | Nusap1  | -0.074 |
 | H2-Aa   | -0.073 |
 
-
 **Zero-Inflated genes (CORTEX Dataset)**
-
 
 | gene   | score  |
 |--------|--------|
@@ -241,9 +219,7 @@ Figure 1bis : distributions of estimated total zero probabilities and NB means f
 | GRIN2B | -0.162 |
 | ARF3   | -0.16  |
 
-
 **Zero-Inflated genes (PBMC Dataset)**
-
 
 | gene            | score  |
 |-----------------|--------|
@@ -257,7 +233,6 @@ Figure 1bis : distributions of estimated total zero probabilities and NB means f
 | ENSG00000214022 | -0.005 |
 | ENSG00000132386 | -0.005 |
 | ENSG00000198492 | -0.005 |
-
 
 **NB genes (HEMATO Dataset)**
 
@@ -275,8 +250,6 @@ Figure 1bis : distributions of estimated total zero probabilities and NB means f
 | Gdi2   | 0.023 |
 
 **NB genes (CORTEX Dataset)**
-
-
 
 | gene        | score |
 |-------------|-------|

@@ -1,11 +1,8 @@
----
-id: scanvi
-title: scANVI
-sidebar_label: scANVI (scRNA-seq)
----
+______________________________________________________________________
+
+## id: scanvi title: scANVI sidebar_label: scANVI (scRNA-seq)
 
 This page is under construction. For now, please learn more about scANVI in our [user guide](https://docs.scvi-tools.org/en/stable/user_guide/index.html).
-
 
 ```python
 # scANVI augments scVI to transfer cell type labels
@@ -31,8 +28,6 @@ adata.layers["scanvi_norm"] = model.get_normalized_expression()
 
 # differential expression
 results = model.differential_expression(
-    groupby="cell types",
-    group1="CD4",
-    group2="CD8"
+    groupby="cell types", group1="CD4", group2="CD8"
 )
 ```
