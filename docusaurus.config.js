@@ -13,9 +13,6 @@ module.exports = {
   projectName: "scvi-tools-site",
   stylesheets: ["https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"],
   themeConfig: {
-    googleAnalytics: {
-      trackingID: "UA-141905405-3",
-    },
     prism: {
       defaultLanguage: "python",
       theme: require("prism-react-renderer/themes/github"),
@@ -102,6 +99,9 @@ module.exports = {
     [
       "@docusaurus/preset-classic",
       {
+        googleAnalytics: {
+            trackingID: "UA-141905405-3",
+        },
         docs: {
           path: "get_started",
           routeBasePath: "get_started",
