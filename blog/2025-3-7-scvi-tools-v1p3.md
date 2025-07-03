@@ -1,7 +1,7 @@
 ---
 slug: v13
 title:      scvi-tools 1.3 release
-date:       2025‑07‑03
+date:       2025-07-03
 author: Ori Kronfeld, Can Ergen, Nir Yosef
 tags: [scvi-tools, release]
 ---
