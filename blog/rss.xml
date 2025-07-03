@@ -4,9 +4,16 @@
         <title>scvi-tools Blog</title>
         <link>https://scvi-tools.org/blog</link>
         <description>scvi-tools Blog</description>
-        <lastBuildDate>Sun, 29 May 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 07 Mar 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[scvi-tools-v1p3]]></title>
+            <link>https://scvi-tools.org/blog/2025/3/7/scvi-tools-v1p3</link>
+            <guid>scvi-tools-v1p3</guid>
+            <pubDate>Fri, 07 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[---]]></description>
+        </item>
         <item>
             <title><![CDATA[Mini-batch size in destVI]]></title>
             <link>https://scvi-tools.org/blog/destvi-batchsize</link>

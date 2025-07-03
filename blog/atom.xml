@@ -2,11 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://scvi-tools.org/blog</id>
     <title>scvi-tools Blog</title>
-    <updated>2022-05-29T00:00:00.000Z</updated>
+    <updated>2025-03-07T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://scvi-tools.org/blog"/>
     <subtitle>scvi-tools Blog</subtitle>
     <icon>https://scvi-tools.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[scvi-tools-v1p3]]></title>
+        <id>scvi-tools-v1p3</id>
+        <link href="https://scvi-tools.org/blog/2025/3/7/scvi-tools-v1p3"/>
+        <updated>2025-03-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[---]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Mini-batch size in destVI]]></title>
         <id>destvi-batchsize</id>
