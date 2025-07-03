@@ -1,9 +1,11 @@
----
-title: "Previewing scvi‑tools v1.3: Next‑Gen Models, Scalable Data Handling & Core Enhancements"
-author: "A Single‑Cell Analyst Tech Expert"
-date: 2025‑07‑03
----
 
+---
+slug: v13
+title:      Scvi‑Tools v1.3: Next‑Gen Models, Scalable Data Handling & Core Enhancements
+date:       2025‑07‑03
+author: Ori Kronfeld
+tags: [scvi-tools, release]
+---
 ## Introduction
 
 We’re proud to introduce **scvi‑tools v1.3** (releases 1.3.0 through 1.3.2), encompassing major advances in modeling, data loading, computational scalability, metric integration, and interpretability. This release spans nine new or enhanced models—tailored to spatial, cytometry, methylation, perturbation, and multi‑omic studies—alongside support for streaming large datasets, multi‑GPU training, scIB metric optimization, and integrated model explainability. Here’s a detailed walkthrough.
