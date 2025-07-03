@@ -2,29 +2,44 @@
 slug: v13
 title:      scvi-tools 1.3 release
 date:       2025‑07‑03
-author: Ori Kronfeld
+author: Ori Kronfeld, Can Ergen, Nir Yosef
 tags: [scvi-tools, release]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<!--truncate-->
-
 ## Introduction
 
-scvi‑tools v1.3 (covering releases 1.3.0, 1.3.1, and 1.3.2) marks a watershed moment in single-cell analytics. Featuring nine new or enhanced models—optimized for spatial, cytometry, methylation, perturbation, and multi‑omic data—it also introduces streaming data loaders for large-scale datasets, multi‑GPU model training, on-the-fly metric tuning, and integrated model interpretability. This article delves into each enhancement with depth, including detailed insights, illustrative figures, and manuscript references.
+We’re proud to introduce scvi‑tools v1.3, encompassing major advances in modeling, data loading, computational scalability, metric integration, and interpretability in single-cell analytics. 
+
+Featuring nine new or enhanced models—optimized for spatial, cytometry, methylation, perturbation, and multi‑omic data—it also introduces streaming data loaders for large-scale datasets, multi‑GPU model training, on-the-fly metric tuning, and integrated model interpretability. 
+
+This article delves into each enhancement with depth, including detailed insights, illustrative figures, and manuscript references.
 
 ---
 
 ## 1. 🔬 New Models
 
 ### **ResolVI**
-ResolVI is a spatial transcriptomics denoising model that reallocates mis-assigned gene counts among true cells, neighborhood leakage, and background. It employs a Gaussian-mixture latent prior to learn corrected counts and interpretable embeddings. In tutorials, it has been shown to markedly enhance spatial expression accuracy in noisy segmentation settings, enabling reliable differential expression—especially in high-throughput ST datasets.  
-_Figure: Before/after spatial count restoration_
+ResolVI[^ref1] is a spatial transcriptomics denoising model that reallocates mis-assigned gene counts among true cells, neighborhood leakage, and background. It employs a Gaussian-mixture latent prior to learn corrected counts and interpretable embeddings. This approach is highly scalable (handling >1 million spots) and offers downstream capabilities like differential expression and transfer learning on corrected data
+
+In [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/spatial/resolVI_tutorial.html), it has been shown to markedly enhance spatial expression accuracy in noisy segmentation settings, enabling reliable differential expression—especially in high-throughput ST datasets.  
+
+<img alt="ResolVI" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/resolvi.png')}/>
+
+Figure 1: ResolVI cell type annotations based on noisy cellular segmentation Xenium data of a mouse brain. The left hemisphere for model training and the right hemisphere for transfer mapping. Original labeles were based on Leiden clustering of the ProSeg algorithm
 
 ---
 
 ### **scVIVA**
-Going beyond single-cell transcriptional profiling, scVIVA jointly models intrinsic gene expression and local cellular niches. It constructs a niche-aware VAE that integrates neighborhood counts and cell-type composition, enabling researchers to identify microenvironment-dependent gene regulation. Its latent embeddings delineate tissue-specific structures—ideal for spatial differential abundance or niche-focused clustering studies.
+scVIVA[^ref2] augments spatial transcriptomics analysis by jointly modeling each cell’s own expression and its micro-environmental context (neighborhood composition and gene counts). This niche-aware VAE embeds both cellular identity and environmental features, revealing tissue-specific patterns and environment-driven variation. Its latent embeddings delineate tissue-specific structures—ideal for spatial differential abundance or niche-focused clustering studies.
+
+Dedicated [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/spatial/scVIVA_tutorial.html) showcase how scVIVA enables niche-focused clustering and differential abundance analyses
+
+<img alt="scVIVA" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/scviva.png')}/>
+
+Figure 2: scVIVA results: median Log-Fold Change (LFC) of upregulated genes in $\textit{G1}$ vs $\textit{G2}$ displayed on the x-axis, while we compare differential expression computed between $\textit{N1}$  and $\textit{G2}$ on the y-axis.
+Genes are colored by their marker label (yellow=significantly upregulated in $\textit{G1}$ vs $\textit{N1}$, green otherwise).
+We also display the classifier decision boundary (the predicted probability of being in the yellow class). 
 
 ---
 
@@ -110,6 +125,11 @@ Together, these developments empower researchers to build, train, and interpret 
 
 ## References
 
+- [^ref1]:
+    ResolVI: addressing noise and bias in spatial transcriptomics / Ergen et al.
+- [^ref2]:
+    scVIVA: a probabilistic framework for representation of cells and their environments in spatial transcriptomics / Levy et al.
+
 - “A unified method for differential methylation analysis” – first author: Lopez  
 - “Joint probabilistic modeling of single-cell multi-omic data with totalVI” – Gayoso  
 - “Integrating single-cell RNA-seq datasets with substantial batch effects” – Hrovatin  
@@ -118,5 +138,3 @@ Together, these developments empower researchers to build, train, and interpret 
 - “MethylVI: a generative model of scBS-seq data” – (single author missing)  
 - “ResolVI: probabilistic deconvolution of spatial transcriptomics” – (if available)  
 - “scVIVA: niche-aware spatial VAE” – (if available)  
-
-*Figures from provided slides will be embedded in placeholders above once available. Reach out on GitHub or scverse forums for feedback or contribution!*
