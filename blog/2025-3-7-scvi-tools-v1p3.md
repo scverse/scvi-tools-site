@@ -20,7 +20,7 @@ This article delves into each enhancement with depth, including detailed insight
 ## 1. 🔬 New Models
 
 ### **ResolVI**
-ResolVI[^ref1] is a spatial transcriptomics denoising model that reallocates mis-assigned gene counts among true cells, neighborhood leakage, and background. It employs a Gaussian-mixture latent prior to learn corrected counts and interpretable embeddings. This approach is highly scalable (handling >1 million spots) and offers downstream capabilities like differential expression and transfer learning on corrected data
+ResolVI[^1] is a spatial transcriptomics denoising model that reallocates mis-assigned gene counts among true cells, neighborhood leakage, and background. It employs a Gaussian-mixture latent prior to learn corrected counts and interpretable embeddings. This approach is highly scalable (handling >1 million spots) and offers downstream capabilities like differential expression and transfer learning on corrected data
 
 In [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/spatial/resolVI_tutorial.html), it has been shown to markedly enhance spatial expression accuracy in noisy segmentation settings, enabling reliable differential expression—especially in high-throughput ST datasets.  
 
@@ -31,7 +31,7 @@ Figure 1: ResolVI cell type annotations based on noisy cellular segmentation Xen
 ---
 
 ### **scVIVA**
-scVIVA[^ref2] augments spatial transcriptomics analysis by jointly modeling each cell’s own expression and its micro-environmental context (neighborhood composition and gene counts). This niche-aware VAE embeds both cellular identity and environmental features, revealing tissue-specific patterns and environment-driven variation. Its latent embeddings delineate tissue-specific structures—ideal for spatial differential abundance or niche-focused clustering studies.
+scVIVA[^2] augments spatial transcriptomics analysis by jointly modeling each cell’s own expression and its micro-environmental context (neighborhood composition and gene counts). This niche-aware VAE embeds both cellular identity and environmental features, revealing tissue-specific patterns and environment-driven variation. Its latent embeddings delineate tissue-specific structures—ideal for spatial differential abundance or niche-focused clustering studies.
 
 Dedicated [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/spatial/scVIVA_tutorial.html) showcase how scVIVA enables niche-focused clustering and differential abundance analyses
 
@@ -44,17 +44,27 @@ We also display the classifier decision boundary (the predicted probability of b
 ---
 
 ### **CytoVI**
-CytoVI brings totalVI-inspired modeling to cytometry and mass cytometry data. It models protein-marker distributions, corrects for dropouts and technical batch variation, and generates embeddings for downstream clustering and abundance inference. Tutorials demonstrate CytoVI’s capability to distinguish subtle immune subpopulations across batches, bringing probabilistic rigor to CyTOF analysis.
+CytoVI[^3] brings totalVI-inspired modeling to cytometry and mass cytometry data. It models protein-marker distributions, corrects for dropouts and technical batch variation, and generates embeddings for downstream clustering and abundance inference. 
+
+Early [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/cytometry/CytoVI_tutorial.html) already demonstrate clear delineation of immune subpopulations across batch-affected datasets.
 
 ---
 
 ### **VIVS**
-Variational Inference for Variable Selection (VIVS) performs interpretable cross-modality feature selection—like gene–protein associations—while formally controlling false discoveries. Illustrated in *Genome Biology* 2024, VIVS effectively maps regulatory relationships in multi-omic datasets, balancing interpretability and scalability with conditional randomization testing and latent selection.
+Variational Inference for Variable Selection (VIVS[^4]) identifies associations across modalities—such as gene–protein couplings—while rigorously controlling false discovery rates using conditional randomization. VIVS achieves interpretable and scalable feature selection, enabling discovery of biologically meaningful links in paired datasets
+
+Tutorial in scvi-tools soon to be updated.
 
 ---
 
 ### **SysVI**
-SysVI tackles major batch effects—such as those arising from cross-species or organoid-versus-tissue studies—using latent cycle-consistency and VampPrior regularization. Compared to Harmony or scVI, SysVI excels at aligning technical systems while preserving true biological variance, producing embedding spaces where analogous cell types across batches cluster coherently.
+SysVI[^5] tackles major batch effects—such as those arising from cross-species or organoid-versus-tissue studies—using latent cycle-consistency and VampPrior regularization. Compared to Harmony or regular scVI models, SysVI excels at aligning technical systems while preserving true biological variance, producing embedding spaces where analogous cell types across batches cluster coherently.
+
+in the [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/scrna/sysVI.html), we show the power of sysVI with data integration between human and mouse immune cells.
+
+<img alt="sysvi" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/sysvi.png')}/>
+
+Figure 3: Example results of integration between human and mouse immune cells 
 
 ---
 
@@ -125,10 +135,12 @@ Together, these developments empower researchers to build, train, and interpret 
 
 ## References
 
-- [^ref1]:
-    ResolVI: addressing noise and bias in spatial transcriptomics / Ergen et al.
-- [^ref2]:
-    scVIVA: a probabilistic framework for representation of cells and their environments in spatial transcriptomics / Levy et al.
+- [^1]: ResolVI: addressing noise and bias in spatial transcriptomics / Ergen et al.
+- [^2]: scVIVA: a probabilistic framework for representation of cells and their environments in spatial transcriptomics / Levy et al.
+- [^3]: CytoVI: Deep generative modeling of antibody-based single cell technologies / Ingelfinger et al.
+- [^4]: VI-VS: calibrated identification of feature dependencies in single-cell multiomics / Boyeau et al.
+- [^5]: sysVI: Integrating single-cell RNA-seq datasets with substantial batch effects / Hrovatin et al.
+
 
 - “A unified method for differential methylation analysis” – first author: Lopez  
 - “Joint probabilistic modeling of single-cell multi-omic data with totalVI” – Gayoso  
