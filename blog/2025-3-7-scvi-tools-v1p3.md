@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 We’re proud to introduce scvi‑tools v1.3, encompassing major advances in modeling, data loading, computational scalability, metric integration, and interpretability in single-cell analytics. 
 
-Featuring nine new or enhanced models, optimized for spatial, cytometry, methylation, perturbation, and multi‑omic data, it also introduces streaming data loaders for large-scale datasets, multi‑GPU model training, on-the-fly metric tuning, and integrated model interpretability. 
+Featuring nine new or enhanced models, optimized for spatial, cytometry, methylation, perturbation, and multi‑omic data, it also introduces custom data loaders for large-scale datasets, multi‑GPU model training, on-the-fly metric tuning, and integrated model interpretability. 
 
 This article delves into each enhancement with depth, including detailed insights, illustrative figures, and manuscript references.
 
@@ -99,11 +99,12 @@ Tutorial in scvi-tools soon to be updated.
 
 scvi‑tools v1.3 introduces three scalable custom dataloaders: LaminDB, Census, and AnnCollection, enabling out-of-core and federated training without memory overload.
 Custom Dataloders are only supported in SCVI & SCANVI models, but it should be easy to expand them to other models.
+These backends support full compatibility with scvi‑tools' data registration and training workflows, offering both scale and convenience to large projects.
 
 ### LaminDB 
 Integrates with [Lamindb](https://lamin.ai/), enabling out-of-core training from disk-backed collections. Users can register collections and seamlessly train models like SCVI using lamin's MappedCollection, benefiting from disk efficiency while maintaining full API compatibility with in-memory datasets. For more inforamtion see this [link](https://docs.scvi-tools.org/en/stable/user_guide/use_case/custom_dataloaders.html).
 
-The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks//use_cases/custom_dl/lamin.html) shows demonstration of a scalable approach to training an scVI model on PBMC data using Lamin dataloader
+The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/custom_dl/lamin.html) shows demonstration of a scalable approach to training an scVI model on PBMC data using Lamin dataloader
 
 <img alt="lamin" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/lamin.png')}/>
 
@@ -114,7 +115,7 @@ Figure 5: SCVI Integration achieved using LaminDB dataloader, on 2 distinct PBMC
 employs [TileDB-SOMA](https://www.tiledb.com/) for atlas-scale tensor-backed data, offering similar streaming capabilities but enhanced support for multi-dimensional genomic inputs and federated study designs.
 This custom dataloder directly read cellXgene dataset from S3 and train the SCVI model without the need to first download it, thus very suitable for few shots learning.
 
-The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks//use_cases/custom_dl/tiledb.html) shows demonstration of a scalable approach to training an scVI model on mus_musculus data using the Census dataloader
+The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/custom_dl/tiledb.html) shows demonstration of a scalable approach to training an scVI model on mus_musculus data using the Census dataloader
 
 <img alt="census" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/census.png')}/>
 
@@ -122,27 +123,38 @@ Figure 6: SCVI Cell Integration achieved using Census dataloader, based on 4 typ
 
 ---
 ### AnnCollection 
-allows seamless union of multiple AnnData sources, perfect for interfacing independent experiments, without manual concatenation or feature alignment. The system handles missing modalities and automatically harmonizes variables across datasets.
+This dataloader allows training on multiple AnnData objects simultaneously, without merging them into one dataset. AnnCollection handles disparities in features or layers internally and aligns them during training, empowering federated or multi-study analyses
 
----
-These backends support full compatibility with scvi‑tools' data registration and training workflows, offering both scale and convenience to large projects.
+Tutorial in scvi-tools soon to be updated.
 
 ---
 
 ## 3. ⚙️ Core Enhancements
 
 ### Multi‑GPU Training  
-Built on PyTorch Lightning, v1.3 empowers all major models (SCVI, totalVI, SysVI, etc.) to run across multiple GPUs with a single API flag. Training benchmarks on million-cell datasets show training times reduced by 2–3×, with full gradient synchronization and no code modifications needed.
+Built on PyTorch Lightning, v1.3 empowers all major models to run across multiple GPUs with a single API flag. Training benchmarks times reduced by number of GPU exists, with full gradient synchronization and no code modifications needed.
+See the following [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/multiGPU.html) and info [page](https://docs.scvi-tools.org/en/stable/user_guide/use_case/multi_gpu_training.html)
+
+<img alt="multigpu" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/multigpu.png')}/>
+
+Figure 7: comparison of SCVI training time between single and X2 multi-GPU machines as data increase. 
 
 ---
 
 ### scIB‑Metrics Optimization  
-scvi‑tools now integrates evaluation of scIB clustering metrics (like NMI and batch ARI) during training via `ScibCallback`, and supports hyperparameter tuning via `AutotuneExperiment`. This enables scientists to automatically optimize latent dimension size, learning rate, or architecture based on validation performance, making the model training process more principled and outcome-driven.
+With the integration of `ScibCallback` and the `AutotuneExperiment` class, users can now monitor [scIB metrics](https://github.com/YosefLab/scib-metrics) on the validation set during training and automatically tune hyperparameters (model, training and architecture parameters) based on these metrics—directly optimizing for clustering and batch mixing performance, making the model training process more principled and outcome-driven.
+See the following [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/autotune_scvi.html#tuning-over-integration-metrics-with-scib-metrics)
 
 ---
 
 ### Explainability & Interpretability  
-v1.3 brings native support for **Integrated Gradients** (IG) across generative models like CondSCVI, peakVI, and totalVI. Users can compute gene-level attribution scores tied to latent dimensions or differential axes. This complements `get_normalized_expression`, delivering a full pipeline that links model representations back to biologically interpretable molecular mechanisms.
+v1.3 brings native support for [Captum's](https://captum.ai/api/integrated_gradients.html) Integrated Gradients (IG) across semi-supervised generative models like Scanvi and totalANVI. Users can compute marker-level attribution scores tied to latent dimensions or differential axes. This complements `get_normalized_expression`, delivering a full pipeline that links model representations back to biologically interpretable molecular mechanisms, offering transparency and interpretability in deep generative modeling
+
+See the following [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/interpretability.html) as an example of scanvi model ran on a PBMC dataset from 10X.
+
+<img alt="ig" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/ig.png')}/>
+
+Figure 8: Integrated gradients total contribution per gene per cell type, over data of PBMC.
 
 ---
 
@@ -152,11 +164,11 @@ scvi‑tools v1.3 is a landmark release that advances the field across three fou
 
 1. **Innovative modeling** across nine tailored VAEs for spatial, protein, methylation, perturbation, and multi‑omic data.
 
-2. **Scalable data processing** with three new streaming backends, enabling efficient handling of federated, atlas-scale datasets.
+2. **Scalable data processing** with three new custom dataloaders in the backend, enabling efficient handling of federated, out-of-core, atlas-scale datasets.
 
 3. **Infrastructure and transparency** with multi-GPU training, metric-aware tuning, and demonstrable model interpretability.
 
-Together, these developments empower researchers to build, train, and interpret probabilistic models at scale—in a reproducible, transparent, and biologically meaningful way.
+Together, these developments empower researchers to build, train, and interpret probabilistic models at scale-in a reproducible, transparent, and biologically meaningful way.
 
 ---
 
