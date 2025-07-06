@@ -125,7 +125,8 @@ Figure 6: SCVI Cell Integration achieved using Census dataloader, based on 4 typ
 ### AnnCollection 
 This dataloader allows training on multiple AnnData objects simultaneously, without merging them into one dataset. AnnCollection handles disparities in features or layers internally and aligns them during training, empowering federated or multi-study analyses
 
-Tutorial in scvi-tools soon to be updated.
+The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/custom_dl/ann_collection.html) shows how to apply the annCollection wrapper in scvi-tools to load and train SCANVI model on several adata's that are stored on disk.
+Another [link](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/hub/Tahoe100.html) shows how the [Tahoe100M](https://doi.org/10.1101/2025.02.20.639398) cells dataset was trained in SCVI using the annCollection wrapper and its minified version was stored on scvi-hub for further anaylsis.
 
 ---
 
