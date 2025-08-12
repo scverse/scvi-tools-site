@@ -2,7 +2,7 @@
 slug: v13
 title:      scvi-tools 1.3 release
 date:       2025-07-03
-author: Ori Kronfeld, Can Ergen, Nir Yosef
+author: Ori Kronfeld
 tags: [scvi-tools, release]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -78,7 +78,7 @@ MethylVI[^7] is a VAE tailored for single-cell bisulfite sequencing (scBS‑seq)
 
 <img alt="methylvi" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/methylvi.png')}/>
 
-Figure 4: MethylVI integration of celltypes from different single-cell bisulfite sequencing platforms
+Figure 4: MethylVI integration of cell types from different single-cell bi-sulfite sequencing platforms
 
 ---
 
@@ -92,41 +92,61 @@ totalANVI brings supervised annotation to CITE‑seq-style multi-omic integratio
 
 Tutorial in scvi-tools soon to be updated.
 
+---
+
+### mrVI in pyTorch
+MrVI[^8] (Multi-resolution Variational Inference) is a model written in [Jax](https://docs.jax.dev/en/latest/notebooks/thinking_in_jax.html) for analyzing multi-sample, multi-batch single-cell RNA-seq data. MrVI is particularly suited for single-cell RNA sequencing datasets with comparable observations across many samples. It conducts both exploratory analyses (locally dividing samples into groups based on molecular properties) and comparative analyses (comparing pre-defined groups of samples in terms of differential expression and differential abundance) at single-cell resolution. 
+
+In recent scvi-tools releases we added a Pytorch implementation of mrVI, to be along with the Jax one, to support broader options on how to use this popular model. 
+
+Tutorial of mrVI in torch running on a subset of [Tahoe100M](https://doi.org/10.1101/2025.02.20.639398) cells dataset can be found [here](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/hub/Tahoe100_mrVI.html)
+
+<img alt="lamin" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/mrvi.png')}/>
+
+Figure 5: mrVI Integration on Covid dataset
 
 ---
 
 ## 2. 🧩 Custom Dataloaders
 
 scvi‑tools v1.3 introduces three scalable custom dataloaders: LaminDB, Census, and AnnCollection, enabling out-of-core and federated training without memory overload.
-Custom Dataloders are only supported in SCVI & SCANVI models, but it should be easy to expand them to other models.
-These backends support full compatibility with scvi‑tools' data registration and training workflows, offering both scale and convenience to large projects.
+Custom Dataloaders are only supported in SCVI & SCANVI models, but it should be easy to expand them to other models.
+These backends support full compatibility with scvi‑tools data registration and training workflows, offering both scale and convenience to large projects.
 
 ### LaminDB 
-Integrates with [Lamindb](https://lamin.ai/), enabling out-of-core training from disk-backed collections. Users can register collections and seamlessly train models like SCVI using lamin's MappedCollection, benefiting from disk efficiency while maintaining full API compatibility with in-memory datasets. For more inforamtion see this [link](https://docs.scvi-tools.org/en/stable/user_guide/use_case/custom_dataloaders.html).
+Integrates with [Lamindb](https://lamin.ai/), enabling out-of-core training from disk-backed collections. Users can register collections and seamlessly train models like SCVI using lamin's MappedCollection, benefiting from disk efficiency while maintaining full API compatibility with in-memory datasets. For more information see this [link](https://docs.scvi-tools.org/en/stable/user_guide/use_case/custom_dataloaders.html).
 
-The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/custom_dl/lamin.html) shows demonstration of a scalable approach to training an scVI model on PBMC data using Lamin dataloader
+The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/custom_dl/lamin.html) shows demonstration of a scalable approach to training an scVI model on PBMC data using Lamin dataloader.
 
 <img alt="lamin" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/lamin.png')}/>
 
-Figure 5: SCVI Integration achieved using LaminDB dataloader, on 2 distinct PBMC data.
+Figure 6: SCVI Integration achieved using LaminDB dataloader, on 2 distinct PBMC data.
+
+This [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/hub/Tahoe100_mrVI_lamin.html) shows the analysis of mrVI in its PyTorch version together with Lamin Custom dataloader over a subset of Tahoe100M cells dataset.
+
+<img alt="lamin" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/lamin_tahoe100.png')}/>
+
+Figure 7: SCVI (bottom) & MRVI (top) Integration achieved using LaminDB dataloader, on a subset of Tahoe100M cells data.
 
 ---
+
 ### Census 
-employs [TileDB-SOMA](https://www.tiledb.com/) for atlas-scale tensor-backed data, offering similar streaming capabilities but enhanced support for multi-dimensional genomic inputs and federated study designs.
-This custom dataloder directly read cellXgene dataset from S3 and train the SCVI model without the need to first download it, thus very suitable for few shots learning.
+employs [TileDB-SOMA](https://www.tiledb.com/) for atlas-scale tensor-backed data, offering similar streaming capabilities but enhanced support for multidimensional genomic inputs and federated study designs.
+This custom dataloader directly read cellXgene dataset from S3 and train the SCVI model without the need to first download it, thus very suitable for few shots learning.
 
 The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/custom_dl/tiledb.html) shows demonstration of a scalable approach to training an scVI model on mus_musculus data using the Census dataloader
 
 <img alt="census" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/census.png')}/>
 
-Figure 6: SCVI Cell Integration achieved using Census dataloader, based on 4 type of batches: dataset_id, donor_id, assay and tissue_general
+Figure 8: SCVI Cell Integration achieved using Census dataloader, based on 4 type of batches: dataset_id, donor_id, assay and tissue_general
 
 ---
+
 ### AnnCollection 
 This dataloader allows training on multiple AnnData objects simultaneously, without merging them into one dataset. AnnCollection handles disparities in features or layers internally and aligns them during training, empowering federated or multi-study analyses
 
 The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/custom_dl/ann_collection.html) shows how to apply the annCollection wrapper in scvi-tools to load and train SCANVI model on several adata's that are stored on disk.
-Another [link](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/hub/Tahoe100.html) shows how the [Tahoe100M](https://doi.org/10.1101/2025.02.20.639398) cells dataset was trained in SCVI using the annCollection wrapper and its minified version was stored on scvi-hub for further anaylsis.
+Another [link](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/hub/Tahoe100.html) shows how the [Tahoe100M](https://doi.org/10.1101/2025.02.20.639398) cells dataset was trained in SCVI using the annCollection wrapper and its minified version was stored on scvi-hub for further analysis.
 
 ---
 
@@ -136,9 +156,9 @@ Another [link](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/hub/Tah
 Built on PyTorch Lightning, v1.3 empowers all major models to run across multiple GPUs with a single API flag. Training benchmarks times reduced by number of GPU exists, with full gradient synchronization and no code modifications needed.
 See the following [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/multiGPU.html) and info [page](https://docs.scvi-tools.org/en/stable/user_guide/use_case/multi_gpu_training.html)
 
-<img alt="multigpu" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/multigpu.png')}/>
+<img alt="multi-gpu" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/multigpu.png')}/>
 
-Figure 7: comparison of SCVI training time between single and X2 multi-GPU machines as data increase. 
+Figure 9: comparison of SCVI training time between single and X2 multi-GPU machines as data increase. 
 
 ---
 
@@ -155,7 +175,7 @@ See the following [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/not
 
 <img alt="ig" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/ig.png')}/>
 
-Figure 8: Integrated gradients total contribution per gene per cell type, over data of PBMC.
+Figure 10: Integrated gradients total contribution per gene per cell type, over data of PBMC.
 
 ---
 
@@ -163,9 +183,9 @@ Figure 8: Integrated gradients total contribution per gene per cell type, over d
 
 scvi‑tools v1.3 is a landmark release that advances the field across three foundational pillars:
 
-1. **Innovative modeling** across nine tailored VAEs for spatial, protein, methylation, perturbation, and multi‑omic data.
+1. **Innovative modeling** across ten tailored VAEs for spatial, protein, methylation, perturbation, and multi‑omic data.
 
-2. **Scalable data processing** with three new custom dataloaders in the backend, enabling efficient handling of federated, out-of-core, atlas-scale datasets.
+2. **Scalable data processing** with three new custom dataloaders in the backend, enabling efficient handling of federated, out-of-core, atlas-scale datasets, such as the Tahoe100M cells.
 
 3. **Infrastructure and transparency** with multi-GPU training, metric-aware tuning, and demonstrable model interpretability.
 
@@ -182,3 +202,4 @@ Together, these developments empower researchers to build, train, and interpret 
 [^5]: sysVI: Integrating single-cell RNA-seq datasets with substantial batch effects / Hrovatin et al.
 [^6]: Decipher: Joint representation and visualization of derailed cell states with Decipher / Nazaret et al.
 [^7]: MethylVI: A deep generative model of single-cell methylomic data / Weinberger et al.
+[^8]: MrVI: Deep generative modeling of sample-level heterogeneity in single-cell genomics / Boyeau et al.
