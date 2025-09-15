@@ -46,7 +46,7 @@ We also display the classifier decision boundary (the predicted probability of b
 ### CytoVI
 CytoVI[^3] brings totalVI-inspired modeling to cytometry and mass cytometry data. It models protein-marker distributions, corrects for dropouts and technical batch variation, and generates embeddings for downstream clustering and abundance inference. 
 
-Early [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/cytometry/CytoVI_tutorial.html) already demonstrate clear delineation of immune subpopulations across batch-affected datasets.
+Early [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/cytometry/CytoVI_batch_correction_tutorial.html) already demonstrate clear delineation of immune subpopulations across batch-affected datasets.
 
 ---
 
@@ -99,7 +99,7 @@ MrVI[^8] (Multi-resolution Variational Inference) is a model written in [Jax](ht
 
 In recent scvi-tools releases we added a Pytorch implementation of mrVI, to be along with the Jax one, to support broader options on how to use this popular model. 
 
-Tutorial of mrVI in torch running on a subset of [Tahoe100M](https://doi.org/10.1101/2025.02.20.639398) cells dataset can be found [here](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/hub/Tahoe100_mrVI.html)
+Tutorial of mrVI in torch running on a subset of [Tahoe100M](https://doi.org/10.1101/2025.02.20.639398) cells dataset can be found [here](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/scrna/Tahoe100_mrVI.html)
 
 <img alt="lamin" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/mrvi.png')}/>
 
@@ -116,13 +116,13 @@ These backends support full compatibility with scvi‑tools data registration an
 ### LaminDB 
 Integrates with [Lamindb](https://lamin.ai/), enabling out-of-core training from disk-backed collections. Users can register collections and seamlessly train models like SCVI using lamin's MappedCollection, benefiting from disk efficiency while maintaining full API compatibility with in-memory datasets. For more information see this [link](https://docs.scvi-tools.org/en/stable/user_guide/use_case/custom_dataloaders.html).
 
-The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/custom_dl/lamin.html) shows demonstration of a scalable approach to training an scVI model on PBMC data using Lamin dataloader.
+The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/custom_dl/lamin.html) shows demonstration of a scalable approach to training an scVI model on PBMC data using Lamin dataloader.
 
 <img alt="lamin" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/lamin.png')}/>
 
 Figure 6: SCVI Integration achieved using LaminDB dataloader, on 2 distinct PBMC data.
 
-This [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/hub/Tahoe100_mrVI_lamin.html) shows the analysis of mrVI in its PyTorch version together with Lamin Custom dataloader over a subset of Tahoe100M cells dataset.
+This [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/custom_dl/Tahoe100_mrVI_lamin.html) shows the analysis of mrVI in its PyTorch version together with Lamin Custom dataloader over a subset of Tahoe100M cells dataset.
 
 <img alt="lamin" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/lamin_tahoe100.png')}/>
 
@@ -134,7 +134,7 @@ Figure 7: SCVI (bottom) & MRVI (top) Integration achieved using LaminDB dataload
 employs [TileDB-SOMA](https://www.tiledb.com/) for atlas-scale tensor-backed data, offering similar streaming capabilities but enhanced support for multidimensional genomic inputs and federated study designs.
 This custom dataloader directly read cellXgene dataset from S3 and train the SCVI model without the need to first download it, thus very suitable for few shots learning.
 
-The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/custom_dl/tiledb.html) shows demonstration of a scalable approach to training an scVI model on mus_musculus data using the Census dataloader
+The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/custom_dl/tiledb.html) shows demonstration of a scalable approach to training an scVI model on mus_musculus data using the Census dataloader
 
 <img alt="census" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/census.png')}/>
 
@@ -145,7 +145,7 @@ Figure 8: SCVI Cell Integration achieved using Census dataloader, based on 4 typ
 ### AnnCollection 
 This dataloader allows training on multiple AnnData objects simultaneously, without merging them into one dataset. AnnCollection handles disparities in features or layers internally and aligns them during training, empowering federated or multi-study analyses
 
-The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/custom_dl/ann_collection.html) shows how to apply the annCollection wrapper in scvi-tools to load and train SCANVI model on several adata's that are stored on disk.
+The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/custom_dl/ann_collection.html) shows how to apply the annCollection wrapper in scvi-tools to load and train SCANVI model on several adata's that are stored on disk.
 Another [link](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/hub/Tahoe100.html) shows how the [Tahoe100M](https://doi.org/10.1101/2025.02.20.639398) cells dataset was trained in SCVI using the annCollection wrapper and its minified version was stored on scvi-hub for further analysis.
 
 ---
