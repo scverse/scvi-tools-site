@@ -1,6 +1,6 @@
 ---
 slug: v13
-title:      scvi-tools 1.3 release
+title:      scvi-tools 1.4 release
 date:       2025-07-03
 author: Ori Kronfeld
 tags: [scvi-tools, release]
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Introduction
 
-We’re proud to introduce scvi‑tools v1.3, encompassing major advances in modeling, data loading, computational scalability, metric integration, and interpretability in single-cell analytics. 
+We’re proud to introduce scvi‑tools v1.4, encompassing major advances in modeling, data loading, computational scalability, metric integration, and interpretability in single-cell analytics. 
 
 Featuring nine new or enhanced models, optimized for spatial, cytometry, methylation, perturbation, and multi‑omic data, it also introduces custom data loaders for large-scale datasets, multi‑GPU model training, on-the-fly metric tuning, and integrated model interpretability. 
 
@@ -109,7 +109,7 @@ Figure 5: mrVI Integration on Covid dataset
 
 ## 2. 🧩 Custom Dataloaders
 
-scvi‑tools v1.3 introduces three scalable custom dataloaders: LaminDB, Census, and AnnCollection, enabling out-of-core and federated training without memory overload.
+scvi‑tools v1.4 introduces three scalable custom dataloaders: LaminDB, Census, and AnnCollection, enabling out-of-core and federated training without memory overload.
 Custom Dataloaders are only supported in SCVI & SCANVI models, but it should be easy to expand them to other models.
 These backends support full compatibility with scvi‑tools data registration and training workflows, offering both scale and convenience to large projects.
 
@@ -153,7 +153,7 @@ Another [link](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/hub/Tah
 ## 3. ⚙️ Core Enhancements
 
 ### Multi‑GPU Training  
-Built on PyTorch Lightning, v1.3 empowers all major models to run across multiple GPUs with a single API flag. Training benchmarks times reduced by number of GPU exists, with full gradient synchronization and no code modifications needed.
+Built on PyTorch Lightning, v1.4 empowers all major models to run across multiple GPUs with a single API flag. Training benchmarks times reduced by number of GPU exists, with full gradient synchronization and no code modifications needed.
 See the following [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/multiGPU.html) and info [page](https://docs.scvi-tools.org/en/stable/user_guide/use_case/multi_gpu_training.html)
 
 <img alt="multi-gpu" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/multigpu.png')}/>
@@ -169,7 +169,7 @@ See the following [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/not
 ---
 
 ### Explainability & Interpretability  
-v1.3 brings native support for [Captum's](https://captum.ai/api/integrated_gradients.html) Integrated Gradients (IG) across semi-supervised generative models like Scanvi and totalANVI. Users can compute marker-level attribution scores tied to latent dimensions or differential axes. This complements `get_normalized_expression`, delivering a full pipeline that links model representations back to biologically interpretable molecular mechanisms, offering transparency and interpretability in deep generative modeling
+v1.4 brings native support for [Captum's](https://captum.ai/api/integrated_gradients.html) Integrated Gradients (IG) across semi-supervised generative models like Scanvi and totalANVI. Users can compute marker-level attribution scores tied to latent dimensions or differential axes. This complements `get_normalized_expression`, delivering a full pipeline that links model representations back to biologically interpretable molecular mechanisms, offering transparency and interpretability in deep generative modeling
 
 See the following [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/use_cases/interpretability.html) as an example of scanvi model ran on a PBMC dataset from 10X.
 
@@ -181,7 +181,7 @@ Figure 10: Integrated gradients total contribution per gene per cell type, over 
 
 ## Summary
 
-scvi‑tools v1.3 is a landmark release that advances the field across three foundational pillars:
+scvi‑tools v1.4 is a landmark release that advances the field across three foundational pillars:
 
 1. **Innovative modeling** across ten tailored VAEs for spatial, protein, methylation, perturbation, and multi‑omic data.
 
