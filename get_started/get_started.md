@@ -5,7 +5,7 @@ slug: /
 ---
 
 
-`scvi-tools` (single-cell variational inference tools) is a package for probabilistic modeling of single-cell omics data, built on top of PyTorch and AnnData. The package hosts implementations of models that perform a wide range of single-cell data analysis tasks, as well as the building blocks to rapidly prototype new probabilstic models.
+`scvi-tools` (single-cell variational inference tools) is a package for probabilistic modeling of single-cell omics data, built on top of PyTorch and AnnData. The package hosts implementations of models that perform a wide range of single-cell data analysis tasks, as well as the building blocks to rapidly prototype new probabilistic models.
 
 ## Installation
 
