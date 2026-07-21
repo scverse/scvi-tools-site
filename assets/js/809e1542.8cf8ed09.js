@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkscvi_tools_site=self.webpackChunkscvi_tools_site||[]).push([[5850],{7455:s=>{s.exports=JSON.parse('{"label":"batch-size","permalink":"/blog/tags/batch-size","allTagsPath":"/blog/tags","count":1}')}}]);

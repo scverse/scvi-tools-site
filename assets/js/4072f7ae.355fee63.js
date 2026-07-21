@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkscvi_tools_site=self.webpackChunkscvi_tools_site||[]).push([[9168],{2144:s=>{s.exports=JSON.parse('{"label":"spatial","permalink":"/blog/tags/spatial","allTagsPath":"/blog/tags","count":1}')}}]);

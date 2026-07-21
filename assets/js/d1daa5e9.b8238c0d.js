@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkscvi_tools_site=self.webpackChunkscvi_tools_site||[]).push([[8962],{7017:s=>{s.exports=JSON.parse('{"label":"autozi","permalink":"/blog/tags/autozi","allTagsPath":"/blog/tags","count":1}')}}]);
