@@ -15,7 +15,7 @@ scvi-hub is a Hugging Face-hosted collection of pretrained scvi-tools models and
 scvi-tools-MCP is a Model Context Protocol (MCP) server that gives AI assistants such as Claude structured access to scvi-tools knowledge: model documentation, tutorials, API references, workflow templates, and pretrained Hugging Face Hub models. It runs as a pure knowledge layer with no runtime model execution, and works with Claude Desktop, Cursor, and any other MCP-compatible client.
 
 ## [cell2location](https://cell2location.readthedocs.io/en/latest/)
-cell2location is a hierarchical Bayesian model for resolving cell types in spatial transcriptomic data (e.g., Visium) with high sensitivty. 
+cell2location is a hierarchical Bayesian model for resolving cell types in spatial transcriptomic data (e.g., Visium) with high sensitivity. 
 
 ## [scArches](https://scarches.readthedocs.io/en/latest/)
 scArches allows for the integration of new query data into reference atlases produced with conditional deep generative models such as trVAE, scVI, scANVI, totalVI and PeakVI.
