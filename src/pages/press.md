@@ -11,9 +11,21 @@
 - A Python library for probabilistic analysis of single-cell omics data.
 A. Gayoso\*, R. Lopez\*, G. Xing\*, P. Boyeau, V. Valiollah Pour Amiri, J. Hong, K. Wu, M. Jayasuriya, E. Mehlman, M. Langevin, Y. Liu, J. Samaran, G. Misrachi, A. Nazaret, O. Clivio, C. Xu, T. Ashuach, M. Lotfollahi, V. Svensson, E. Beltrame, V. Kleshchevnikov, C. Talavera-Lopez, L. Pachter, F.J. Theis, A. Streets, M.I. Jordan, J. Regier, N. Yosef.
 *Nature Biotechnology*, 2022
-- Multi-resolution deconvolution of spatial transcriptomics data reveals continuous patterns of inflammation.
-R. Lopez\*, B. Li\*, H. Keren-Shaul\*, P. Boyeau, M. Kedmi, D. Pilzer, A. Jelinski, E. David, A. Wagner, Y. Addadi, M.I. Jordan, I. Amit†, N. Yosef†
-*bioRxiv*, 2021
+- ResolVI: addressing noise and bias in spatial transcriptomics.
+C. Ergen, N. Yosef.
+*bioRxiv*, 2025
+- scVIVA: a probabilistic framework for representation of cells and their environments in spatial transcriptomics.
+N. Levy, F. Ingelfinger, A. Bakulin, G. Cinnirella, P. Boyeau, B. Nadler, C. Ergen, N. Yosef.
+*bioRxiv*, 2025
+- CytoVI: Deep generative modeling of antibody-based single cell technologies.
+F. Ingelfinger, N. Levy, C. Ergen, A. Bakulin, A. Becker, P. Boyeau, M. Kim, D. Ditz, J. Dirks, J. Maaskola, T. Wertheimer, R. Zeiser, C.C. Widmer, I. Amit, N. Yosef.
+*bioRxiv*, 2025
+- scvi-hub: an actionable repository for model-driven single-cell analysis.
+C. Ergen, V. Valiollah Pour Amiri, M. Kim, O. Kronfeld, A. Streets, A. Gayoso, N. Yosef.
+*Nature Methods*, 2025
+- DestVI identifies continuums of cell types in spatial transcriptomics data.
+R. Lopez\*, B. Li\*, H. Keren-Shaul\*, P. Boyeau, M. Kedmi, D. Pilzer, A. Jelinski, I. Yofe, E. David, A. Wagner, Y. Addadi, O. Golani, F. Ronchese, M.I. Jordan, I. Amit†, N. Yosef†
+*Nature Biotechnology*, 2022
  - Joint probabilistic modeling of single-cell multi-omic data with totalVI.
 A. Gayoso\*, Z. Steier\*, R. Lopez, J. Regier, KL. Nazor, A. Streets†, N Yosef†.
 *Nature Methods*, 2021

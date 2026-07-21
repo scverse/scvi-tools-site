@@ -122,7 +122,7 @@ The next [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/cu
 
 Figure 6: SCVI Integration achieved using LaminDB dataloader, on 2 distinct PBMC data.
 
-This [tutorial](https://docs.scvi-tools.org/en/stable/tutorials/notebooks/custom_dl/Tahoe100_mrVI_lamin.html) shows the analysis of mrVI in its PyTorch version together with Lamin Custom dataloader over a subset of Tahoe100M cells dataset.
+This [tutorial](https://docs.scvi-tools.org/en/1.4.3/tutorials/notebooks/custom_dl/Tahoe100_mrVI_lamin.html) shows the analysis of mrVI in its PyTorch version together with Lamin Custom dataloader over a subset of Tahoe100M cells dataset.
 
 <img alt="lamin" width="100%" src={useBaseUrl('img/blog-post-scvi-tools-1p3/lamin_tahoe100.png')}/>
 

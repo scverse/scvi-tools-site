@@ -95,6 +95,19 @@ module.exports = {
     },
   },
   plugins: ["docusaurus-plugin-sass"],
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        language: ["en"],
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: true,
+        docsRouteBasePath: "/get_started",
+      },
+    ],
+  ],
   presets: [
     [
       "@docusaurus/preset-classic",
@@ -112,7 +125,7 @@ module.exports = {
         },
         blog: {
           showReadingTime: true,
-          editUrl: "https://github.com/YosefLab/scvi-tools-site/blog/",
+          editUrl: "https://github.com/YosefLab/scvi-tools-site/edit/main/blog/",
           remarkPlugins: [math],
           rehypePlugins: [[katex, { strict: false }]],
         },

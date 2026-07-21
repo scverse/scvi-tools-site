@@ -2,6 +2,18 @@
 
 Here we highlight projects that make use of scvi-tools.
 
+## [scIB-metrics](https://scib-metrics.readthedocs.io/en/latest/)
+scIB-metrics provides accelerated, Python-only implementations of the metrics from the scIB single-cell integration benchmarking suite, using JAX for jit-compiled, hardware-accelerated computation. It is commonly used alongside scvi-tools to benchmark and compare batch-correction and integration methods such as scVI and scANVI against alternatives like Harmony and LIGER.
+
+## [scviva-tools](https://scviva-tools.readthedocs.io/en/latest/)
+scviva-tools is a spatial transcriptomics toolkit built on scvi-tools that packages scVIVA, a niche-aware model that learns cellular representations conditioned on the surrounding microenvironment, alongside DestVI, ResolVI, GIMVI, Stereoscope, and Tangram as first-class models, plus the Harreman module for cell-cell communication and metabolic exchange analysis. It provides a unified API for deconvolution, noise correction, gene imputation, and niche-aware differential expression across spatial datasets.
+
+## [scvi-hub](https://huggingface.co/scvi-tools)
+scvi-hub is a Hugging Face-hosted collection of pretrained scvi-tools models and reference atlases, including scVI, scANVI, totalVI, and spatial deconvolution models. Models can be browsed, downloaded, and queried directly through the `scvi.hub` module in scvi-tools, letting users skip training and map new query data onto existing reference models.
+
+## [scvi-tools-MCP](https://pypi.org/project/scvi-tools-mcp/)
+scvi-tools-MCP is a Model Context Protocol (MCP) server that gives AI assistants such as Claude structured access to scvi-tools knowledge: model documentation, tutorials, API references, workflow templates, and pretrained Hugging Face Hub models. It runs as a pure knowledge layer with no runtime model execution, and works with Claude Desktop, Cursor, and any other MCP-compatible client.
+
 ## [cell2location](https://cell2location.readthedocs.io/en/latest/)
 cell2location is a hierarchical Bayesian model for resolving cell types in spatial transcriptomic data (e.g., Visium) with high sensitivty. 
 
