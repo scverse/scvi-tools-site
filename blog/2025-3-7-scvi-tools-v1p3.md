@@ -15,6 +15,8 @@ Featuring nine new or enhanced models, optimized for spatial, cytometry, methyla
 
 This article delves into each enhancement with depth, including detailed insights, illustrative figures, and manuscript references.
 
+<!--truncate-->
+
 ---
 
 ## 1. 🔬 New Models

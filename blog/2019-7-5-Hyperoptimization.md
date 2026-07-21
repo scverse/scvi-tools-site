@@ -4,6 +4,7 @@ title:      Hyperparameter search for scVI
 date:       2019-07-05
 description:    A study of the effects of hyperparameter optimization on scVI models.
 author:     Gabriel Misrachi, Jeffrey Regier, Romain Lopez, Nir Yosef
+tags: [autotune, hyperparameters]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
