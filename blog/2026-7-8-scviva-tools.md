@@ -1,6 +1,6 @@
 ---
 slug: scviva-tools
-title:      Introducing scVIVA-Tools and scvi-tools MCP
+title:      Introducing scVIVA-Tools & scvi-tools MCP
 date:       2026-07-08
 author:     Ori Kronfeld
 tags: [scviva-tools, scvi-tools-mcp, spatial, mcp, release]
@@ -79,24 +79,29 @@ for the full API reference and tutorials for each model.
 
 scVIVA-Tools is under active development. Already in progress:
 
-- **DiagVI** — a cross-modality model bridging spatial transcriptomics and spatial proteomics, with two tutorials
-  coming alongside its first release. ([docs preview](https://scviva-tools.readthedocs.io/en/latest/user_guide/models/diagvi.html))
+- **[DiagVI](https://scviva-tools.readthedocs.io/en/latest/user_guide/models/diagvi.html)** — a cross-modality model bridging spatial transcriptomics and spatial proteomics.
 - **[AMICI](https://github.com/azizilab/amici)** — cell-cell interaction modeling.
-- **VIVS** — [spatial variable selection](https://github.com/YosefLab/VIVS).
-- **NOLAN** — niche detection.
+- **[VIVS](https://github.com/YosefLab/VIVS)** — spatial variable selection.
+- **NOLAN** — niche detection: identifies and characterizes recurring cellular neighborhoods (niches) directly
+  from spatial coordinates and expression, complementing scVIVA's niche-conditioned representation learning.
 - **[Starfysh](https://github.com/azizilab/starfysh)** — histology-based deconvolution.
-- **SPARL** — spatial proteomics.
-- **[CSDE](https://github.com/YosefLab/CSDE)** — under evaluation for inclusion as well.
+- **SPARL** — a vision-transformer-based foundation model for spatial proteomics imaging data, part of a broader
+  push toward foundation models for spatial omics.
+- **[CSDE](https://github.com/YosefLab/CSDE)** (Corrected Spatial Differential Expression) — corrects for
+  systematic errors like cell mis-segmentation and mislabeling in spatial transcriptomics before they propagate
+  into false discoveries, by combining large automated annotations with a small manually-validated subset via
+  prediction-powered inference (PPI) to recover unbiased estimates with valid confidence intervals.
 
 Looking further out, expect standardized spatial benchmarking metrics (via [scIB-metrics](/ecosystem)) and
 pre-trained reference models on public Xenium and Visium HD atlases.
 
 ## scvi-tools MCP: scvi-tools knowledge for LLMs
 
-The second release is a different kind of tool entirely: **[scvi-tools MCP](https://pypi.org/project/scvi-tools-mcp/)**,
+The second release is a different kind of tool entirely: **[scvi-tools MCP](https://scvi-tools-mcp.readthedocs.io/en/latest/index.html)**,
 a [Model Context Protocol](https://modelcontextprotocol.io/) server that gives LLM coding assistants — Claude
-Desktop, Cursor, or any other MCP-compatible client — structured, up-to-date access to scvi-tools knowledge: model
-documentation, tutorials, API reference, workflow templates, pretrained Hugging Face Hub models, and community FAQ.
+Code, Claude Desktop, Cursor, Windsurf, OpenAI Codex CLI, or any other MCP-compatible client — structured,
+up-to-date access to scvi-tools knowledge: model documentation, tutorials, API reference, workflow templates,
+pretrained Hugging Face Hub models, and community FAQ.
 
 It's a pure knowledge layer — no runtime model execution — so it's safe to point at any assistant you already use
 for coding. Under the hood it exposes 17 tools, from `recommend_model` (rank models by task and data type) and
@@ -105,12 +110,28 @@ and a catch-all `search_knowledge`. All of it is baked into the package at build
 against the live scvi-tools changelog, tutorials, GitHub issues, Discourse threads, and Hugging Face Hub registry —
 so recommendations stay current with new models like the ones described above.
 
-### Quick start
+### Installation
+
+```bash
+pip install scvi-tools-mcp
+```
+
+Or skip the install entirely and let `uvx` fetch it on demand — this is what all the client configs below use.
+
+### Connecting to your LLM client
+
+**Claude Code (CLI)**
+
+```bash
+claude mcp add scvi-tools-mcp -s user -- uvx scvi-tools-mcp
+```
+
+**Claude Desktop** — add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 
 ```json
 {
   "mcpServers": {
-    "scvi-tools": {
+    "scvi-tools-mcp": {
       "command": "uvx",
       "args": ["scvi-tools-mcp"]
     }
@@ -118,11 +139,26 @@ so recommendations stay current with new models like the ones described above.
 }
 ```
 
-Add that to `~/Library/Application Support/Claude/claude_desktop_config.json` (or your client's equivalent MCP
-config) and ask your assistant something like "which scvi-tools model should I use for CITE-seq data with a
+**OpenAI Codex CLI** — add to `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.scvi-tools-mcp]
+command = "uvx"
+args   = ["scvi-tools-mcp"]
+```
+
+**Cursor / Windsurf / other MCP-compatible clients**
+
+```json
+{ "command": "uvx", "args": ["scvi-tools-mcp"] }
+```
+
+Once connected, ask your assistant something like "which scvi-tools model should I use for CITE-seq data with a
 reference atlas?" — it'll call `recommend_model` and walk you through setup, rather than guessing from a stale
-training cutoff. See the [scvi-tools-mcp repository](https://github.com/YosefLab/scvi-tools-mcp) for local
-install instructions and the full tool list.
+training cutoff. See the [scvi-tools-mcp documentation](https://scvi-tools-mcp.readthedocs.io/en/latest/index.html)
+for the full tool list and the [repository](https://github.com/YosefLab/scvi-tools-mcp) for source and issues —
+and for a broader tour of LLM-assisted scvi-tools workflows (including the Claude skill bundle, ChatGPT, and
+other engines), see the [user guide](https://docs.scvi-tools.org/en/stable/user_guide/use_case/llm_assisted_analysis.html).
 
 ## Try it out
 

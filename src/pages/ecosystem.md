@@ -11,8 +11,8 @@ scviva-tools is a spatial transcriptomics toolkit built on scvi-tools that packa
 ## [scvi-hub](https://huggingface.co/scvi-tools)
 scvi-hub is a Hugging Face-hosted collection of pretrained scvi-tools models and reference atlases, including scVI, scANVI, totalVI, and spatial deconvolution models. Models can be browsed, downloaded, and queried directly through the `scvi.hub` module in scvi-tools, letting users skip training and map new query data onto existing reference models.
 
-## [scvi-tools-MCP](https://pypi.org/project/scvi-tools-mcp/)
-scvi-tools-MCP is a Model Context Protocol (MCP) server that gives AI assistants such as Claude structured access to scvi-tools knowledge: model documentation, tutorials, API references, workflow templates, and pretrained Hugging Face Hub models. It runs as a pure knowledge layer with no runtime model execution, and works with Claude Desktop, Cursor, and any other MCP-compatible client.
+## [scvi-tools-MCP](https://scvi-tools-mcp.readthedocs.io/en/latest/index.html)
+scvi-tools-MCP is a Model Context Protocol (MCP) server that gives AI assistants such as Claude structured access to scvi-tools knowledge: model documentation, tutorials, API references, workflow templates, and pretrained Hugging Face Hub models. It runs as a pure knowledge layer with no runtime model execution, and works with Claude Code, Claude Desktop, Cursor, and any other MCP-compatible client. Install via `pip install scvi-tools-mcp` or [PyPI](https://pypi.org/project/scvi-tools-mcp/).
 
 ## [cell2location](https://cell2location.readthedocs.io/en/latest/)
 cell2location is a hierarchical Bayesian model for resolving cell types in spatial transcriptomic data (e.g., Visium) with high sensitivity. 
