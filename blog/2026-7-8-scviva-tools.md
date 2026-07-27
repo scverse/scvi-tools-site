@@ -1,6 +1,6 @@
 ---
 slug: scviva-tools
-title:      Introducing scVIVA-Tools & scvi-tools MCP
+title:      Introducing scVIVA-Tools & scVI-Tools MCP
 date:       2026-07-08
 author:     Ori Kronfeld
 tags: [scviva-tools, scvi-tools-mcp, spatial, mcp, release]
@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Alongside `scvi-tools` v1.5.0, we're shipping two new packages that round out the ecosystem in very different
 directions: **scVIVA-Tools**, which consolidates seven spatial transcriptomics models into a single toolkit, and
-**scvi-tools MCP**, which puts scvi-tools knowledge directly in reach of LLM coding assistants like Claude.
+**scVI-Tools MCP**, which puts scvi-tools knowledge directly in reach of LLM coding assistants like Claude.
 
 <!--truncate-->
 
@@ -72,7 +72,7 @@ adata.obsm["X_resolvi"] = model.get_latent_representation()
 ```
 
 Swapping in scVIVA for niche-aware differential expression, or DestVI for Visium deconvolution, follows the same
-pattern — setup, train, extract. See the [scviva-tools documentation](https://scviva-tools.readthedocs.io/en/latest/)
+pattern — setup, train, extract. See the [scVIVA-Tools documentation](https://scviva-tools.readthedocs.io/en/latest/)
 for the full API reference and tutorials for each model.
 
 ### What's next for scVIVA-Tools
@@ -95,9 +95,9 @@ scVIVA-Tools is under active development. Already in progress:
 Looking further out, expect standardized spatial benchmarking metrics (via [scIB-metrics](/ecosystem)) and
 pre-trained reference models on public Xenium and Visium HD atlases.
 
-## scvi-tools MCP: scvi-tools knowledge for LLMs
+## scVI-Tools MCP: scvi-tools knowledge for LLMs
 
-The second release is a different kind of tool entirely: **[scvi-tools MCP](https://scvi-tools-mcp.readthedocs.io/en/latest/index.html)**,
+The second release is a different kind of tool entirely: **[scVI-Tools MCP](https://scvi-tools-mcp.readthedocs.io/en/latest/index.html)**,
 a [Model Context Protocol](https://modelcontextprotocol.io/) server that gives LLM coding assistants — Claude
 Code, Claude Desktop, Cursor, Windsurf, OpenAI Codex CLI, or any other MCP-compatible client — structured,
 up-to-date access to scvi-tools knowledge: model documentation, tutorials, API reference, workflow templates,
@@ -155,7 +155,7 @@ args   = ["scvi-tools-mcp"]
 
 Once connected, ask your assistant something like "which scvi-tools model should I use for CITE-seq data with a
 reference atlas?" — it'll call `recommend_model` and walk you through setup, rather than guessing from a stale
-training cutoff. See the [scvi-tools-mcp documentation](https://scvi-tools-mcp.readthedocs.io/en/latest/index.html)
+training cutoff. See the [scVI-Tools MCP documentation](https://scvi-tools-mcp.readthedocs.io/en/latest/index.html)
 for the full tool list and the [repository](https://github.com/YosefLab/scvi-tools-mcp) for source and issues —
 and for a broader tour of LLM-assisted scvi-tools workflows (including the Claude skill bundle, ChatGPT, and
 other engines), see the [user guide](https://docs.scvi-tools.org/en/stable/user_guide/use_case/llm_assisted_analysis.html).
