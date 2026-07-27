@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: scvi-tools Forum
+    url: https://discourse.scvi-tools.org/
+    about: Usage questions about scvi-tools itself (not this website) belong here.
+  - name: Scverse Community Forum
+    url: https://discourse.scverse.org/
+    about: Questions about the wider scverse ecosystem.
