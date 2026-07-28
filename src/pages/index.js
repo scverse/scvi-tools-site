@@ -5,8 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.scss";
 
 // Prism (Rust)
-import Prism from "prism-react-renderer/prism";
-(typeof global !== "undefined" ? global : window).Prism = Prism;
+(typeof global !== "undefined" ? global : window).Prism = require("prismjs");
 require("prismjs/components/prism-rust");
 
 import Comparison from "@theme/Comparison";

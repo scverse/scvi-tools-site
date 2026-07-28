@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Highlight, { defaultProps } from "prism-react-renderer";
+import { Highlight } from "prism-react-renderer";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useThemeContext } from '@docusaurus/theme-common';
+import { useColorMode } from '@docusaurus/theme-common';
 
 import styles from "./styles.module.scss";
 
@@ -24,7 +24,8 @@ function CodeSnippet(props) {
         setMounted(true);
     }, []);
 
-    const { isDarkTheme } = useThemeContext();
+    const { colorMode } = useColorMode();
+    const isDarkTheme = colorMode === "dark";
     const lightModeTheme = prism.theme;
     const darkModeTheme = prism.darkTheme || lightModeTheme;
     const prismTheme = isDarkTheme ? darkModeTheme : lightModeTheme;
@@ -33,7 +34,6 @@ function CodeSnippet(props) {
 
     return (
         <Highlight
-            {...defaultProps}
             code={code}
             language={language}
             key={mounted}

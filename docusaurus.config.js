@@ -1,5 +1,6 @@
-const math = require("remark-math");
-const katex = require("rehype-katex");
+const math = require("remark-math").default;
+const katex = require("rehype-katex").default;
+const { themes: prismThemes } = require("prism-react-renderer");
 
 module.exports = {
   title: "scvi-tools",
@@ -15,8 +16,8 @@ module.exports = {
   themeConfig: {
     prism: {
       defaultLanguage: "python",
-      theme: require("prism-react-renderer/themes/github"),
-      darkTheme: require("prism-react-renderer/themes/dracula"),
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
     },
     colorMode: {
       disableSwitch: true,
