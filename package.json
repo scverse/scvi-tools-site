@@ -17,7 +17,7 @@
     "@easyops-cn/docusaurus-search-local": "^0.55.2",
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
-    "@fortawesome/react-fontawesome": "^0.2.4",
+    "@fortawesome/react-fontawesome": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "classnames": "^2.3.1",
     "clsx": "^1.1.1",
