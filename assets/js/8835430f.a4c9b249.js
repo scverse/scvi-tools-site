@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkscvi_tools_site=self.webpackChunkscvi_tools_site||[]).push([[8723],{9865:s=>{s.exports=JSON.parse('{"label":"scvi-tools-mcp","permalink":"/blog/tags/scvi-tools-mcp","allTagsPath":"/blog/tags","count":1}')}}]);

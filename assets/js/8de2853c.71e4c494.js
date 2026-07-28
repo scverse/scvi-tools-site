@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkscvi_tools_site=self.webpackChunkscvi_tools_site||[]).push([[672],{5706:s=>{s.exports=JSON.parse('{"label":"destvi","permalink":"/blog/tags/destvi","allTagsPath":"/blog/tags","count":1}')}}]);
